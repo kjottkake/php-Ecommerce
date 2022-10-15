@@ -5,7 +5,7 @@ Predevelopment
 []Break down project into sections
 
 Development
-[]Homepage
+[]Main Page
     []Set up Homepage visual structure
     []Set up Homepage links
     
