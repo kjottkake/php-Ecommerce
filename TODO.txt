@@ -1,0 +1,22 @@
+List of things to do:
+
+Predevelopment
+[]Read through project description
+[]Break down project into sections
+
+Development
+[]Homepage
+    []Set up Homepage visual structure
+    []Set up Homepage links
+    
+[]Admin page
+    []Set up admin page visual stucture
+    []Set up admin page links
+[]User page
+    []Set up user page visual structure
+    []Set up user page lnks
+[]Database
+    []Set up database
+
+
+Deploy
