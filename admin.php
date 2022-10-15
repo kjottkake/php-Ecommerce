@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to my store!</h1>
-    <h2>Sale item of the day: </h2>
+    <h1>Welcome to the admin page</h1>
 </body>
 </html>
