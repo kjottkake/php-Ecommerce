@@ -1,8 +1,8 @@
 List of things to do:
 
 Predevelopment
-[]Read through project description
-[]Break down project into sections
+[x]Read through project description
+[x]Break down project into sections
 
 Development
 []Main Page
@@ -12,6 +12,11 @@ Development
 []Admin page
     []Set up admin page visual stucture
     []Set up admin page links
+    Questions:
+        16OCT2022
+        []What is an associate array?
+
+
 []User page
     []Set up user page visual structure
     []Set up user page lnks
@@ -20,5 +25,6 @@ Development
     Questions:
         16OCT2022
         []How to connect PHPMyAdmin with DB.txt or vise versa?
+        []What is an associate array?
 
 Deploy

@@ -16,6 +16,7 @@ displayNavBar();
     <h2>test</h2>
     <p>lol</p>
     <?php
+    createTable();
     testNuts();
     testNuts();
     // Have a table to display current products
