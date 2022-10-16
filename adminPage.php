@@ -12,9 +12,12 @@ displayNavBar();
     <title>Ecommerce - Admin Area </title>
 </head>
 <body>
-    <h1>Hey cool dude, you're at the admin page</h1>
-    <?php 
-    
+    <h1>Hey cool dude, you're at the admin pageasdfadf</h1>
+    <h2>test</h2>
+    <p>lol</p>
+    <?php
+    testNuts();
+    testNuts();
     // Have a table to display current products
     
     // Add a form  to create a new product
@@ -25,7 +28,11 @@ displayNavBar();
     
     ?>
     
-    
-    
+    <?php 
+     testNuts();
+    ?>
+    <p> why does it not work </p>
+   <p>asdfasdfa</p>
+    <p>asdfasdfsa</p>
 </body>
 </html>

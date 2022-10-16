@@ -105,5 +105,9 @@ echo "</table>";
     
 }
 
+function testNuts(){
+    echo "<h2>deeeeez nuts was here</h2>";
+}
+
 
 ?>
