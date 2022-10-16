@@ -12,7 +12,7 @@ displayNavBar();
     <title>Ecommerce - Main Page </title>
 </head>
 <body>
-    
+    <h1>Homepage</h1>
     <?php 
     
     // Have a table to display current products

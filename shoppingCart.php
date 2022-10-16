@@ -12,7 +12,7 @@ displayNavBar();
     <title>Ecommerce - Shopping Cart </title>
 </head>
 <body>
-    
+    <h1>Shopping cart: 0 items</h1>
     <?php 
     
     // Displays the current items in the shopping cart. 
