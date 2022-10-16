@@ -9,7 +9,7 @@ function displayNavBar(){
         // You can add more pages here
         echo "<a href='https://www.google.com/'>Google</a> ";
         echo "<a href='/phpMyAdmin/index.php'>phpMyAdmin</a> ";
-    
+        echo "<a href='index.html'>HTML Test Page</a> ";
     echo "</nav>";
     echo "<br><br>";
 
