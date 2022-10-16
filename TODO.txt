@@ -10,8 +10,10 @@ Development
     []Set up Homepage links
     
 []Admin page
-    []Set up admin page visual stucture
-    []Set up admin page links
+    []Read data from database
+    []Generate table
+    []Form to add items
+    []form to remove items
     Questions:
         16OCT2022
         []What is an associate array?
@@ -20,6 +22,7 @@ Development
 []User page
     []Set up user page visual structure
     []Set up user page lnks
+    
 []Database
     []Set up database via PHPMyAdmin
     Questions:
