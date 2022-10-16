@@ -16,7 +16,7 @@ Development
     []Set up user page visual structure
     []Set up user page lnks
 []Database
-    []Set up database
+    []Set up database via PHPMyAdmin
 
 
 Deploy
