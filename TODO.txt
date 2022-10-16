@@ -17,6 +17,8 @@ Development
     []Set up user page lnks
 []Database
     []Set up database via PHPMyAdmin
-
+    Questions:
+        16OCT2022
+        []How to connect PHPMyAdmin with DB.txt or vise versa?
 
 Deploy
