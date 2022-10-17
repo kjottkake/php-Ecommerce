@@ -37,7 +37,7 @@ displayNavBar();
 
 
     ?>
-    <h2>Add Item</h2>
+    <h2>Add New Item</h2>
     <div class="container">
         
         <div class="col-sm-6">
