@@ -110,7 +110,7 @@ function testNuts(){
 }
 
 
-function connectToDb(){
+function dbConnectTester(){
     $host = 'localhost';
     $username = 'root';
     $password = 'root';
