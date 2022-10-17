@@ -1,6 +1,6 @@
 <?php
 include "functions.php";
-
+include "classes/class_Database.php";
 displayNavBar();
 
 ?>
@@ -28,12 +28,31 @@ displayNavBar();
     
     
     ?>
-    
-    <?php 
-     testNuts();
+
+    <!-- db area  -->
+    <?php
+    echo "Database section: ";
+
+    // Creating new database object
+    $db = new Database;
+
+    $db->connect();
+
+    // $host = 'localhost';
+    // $username = 'root';
+    // $password = 'root';
+    // $database = 'loginapp';
+
+    // $connection = mysqli_connect($host,$username,$password,$database);
+
+    // if($connection){
+    //     echo "We are connected<br>";
+    // }else {
+    //     die ("Database connection failed");
+    // }
+
+
     ?>
-    <p> why does it not work </p>
-   <p>asdfasdfa</p>
-    <p>asdfasdfsa</p>
+
 </body>
 </html>

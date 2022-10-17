@@ -5,7 +5,7 @@ echo "In class: Database<br>";
 
 class Database{
     
-    protected function connect(){
+    function connect(){
         echo "Database : connect<br>";
         
         $host = 'localhost';
