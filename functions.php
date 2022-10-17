@@ -110,4 +110,21 @@ function testNuts(){
 }
 
 
+function connectToDb(){
+    $host = 'localhost';
+    $username = 'root';
+    $password = 'root';
+    //name of my database
+    $database = 'ecommerce';
+
+    $connection = mysqli_connect($host,$username,$password,$database);
+
+    if($connection){
+        echo "SUCCESS! We're connected to $database<br>";
+    }else {
+        die ("Database connection failed -- SOMETHING FUCKY IS HAPPENING HERE.");
+    }
+
+}
+
 ?>

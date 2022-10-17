@@ -34,22 +34,10 @@ displayNavBar();
     echo "Database section: ";
 
     // Creating new database object
-    $db = new Database;
+    // $db = new Database;
 
-    $db->connect();
-
-    // $host = 'localhost';
-    // $username = 'root';
-    // $password = 'root';
-    // $database = 'loginapp';
-
-    // $connection = mysqli_connect($host,$username,$password,$database);
-
-    // if($connection){
-    //     echo "We are connected<br>";
-    // }else {
-    //     die ("Database connection failed");
-    // }
+    // $db->connect();
+    connectToDb();
 
 
     ?>
