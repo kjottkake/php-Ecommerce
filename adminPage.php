@@ -69,27 +69,19 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
     <h1>Hey cool dude, you're at the admin pageasdfadf</h1>
-    <h2>test</h2>
-    <p>lol</p>
     <?php
     
-    testNuts();
-    testNuts();
     // Have a table to display current products
-    echo "<table>";
     // Add a form  to create a new product
     // Add functionality to delete an existing product
     ?>
 
     <!-- db area  -->
     <?php
-    echo "Database section: ";
 
-    // Creating new database object
-    // $db = new Database;
-
-    // $db->connect();
-    dbConnectTester();
+    //Test Code::::::
+    // echo "Database section: ";
+    // dbConnectTester();
 
 
     ?>

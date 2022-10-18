@@ -13,21 +13,26 @@ Development
     []Read data from database
     []Generate table
     []Form to add items
+        [x]Function
+        []Add to class and methods
     []form to remove items
     Questions:
         16OCT2022
-        []What is an associate array?
+        [x]What is an associate array? 
+            A: Just an array
 
 
 []User page
     []Set up user page visual structure
     []Set up user page lnks
     
-[]Database
-    []Set up database via PHPMyAdmin
+[x]Database
+    [x]Set up database via PHPMyAdmin
     Questions:
         16OCT2022
-        []How to connect PHPMyAdmin with DB.txt or vise versa?
-        []What is an associate array?
+        [x]How to connect PHPMyAdmin with DB.txt or vise versa?
+        [x]What is an associate array?
 
 Deploy
+
+Documentation
