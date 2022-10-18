@@ -8,23 +8,26 @@ if(isset($_POST['submit'])) {
     echo "yes, information received"."<br>";
     
     
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    // $username = $_POST['username'];
+    // $password = $_POST['password'];
 
-    $product_id = $_POST['product_id'];
-    
+    $product_name = $_POST['product_name'];
+    $image_name = $_POST['image_name'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
     
     // basic form data validation
-    if($username && $password){
+    if($product_name  && $image_name && $description && $price){
     
-        echo $username."<br>";
-        echo $password."<br>";
-
+        echo $product_name."<br>";
+        echo $image_name."<br>";
+        echo $description."<br>";
+        echo $price."<br>";
 
         // connect to localhost, default username = root ; default password = root
         // 'loginapp' in this case is our database. 
 
-        $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
+        $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
 
         if($connection) {
             echo "We are connected";
@@ -34,7 +37,7 @@ if(isset($_POST['submit'])) {
         
         //query the database
         $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
-        $query .= "VALUES ('$username', '$password')";
+        $query .= "VALUES ('NULL', '$product_name', '$image_name', '$description', '$price')";
         
         $result = mysqli_query($connection, $query);
         
@@ -95,7 +98,7 @@ if(isset($_POST['submit'])) {
         
         <div class="col-sm-6">
             
-            <form action="login_create.php" method="post">
+            <form action="adminpage.php" method="post">
                 <div class="form-group">
                     <label for="product_name">Product Name</label> 
                     <input type="text" name="product_name" class="form-control">
