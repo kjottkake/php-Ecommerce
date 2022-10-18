@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
         
         //query the database
         $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
-        $query .= "VALUES ('NULL', '$product_name', '$image_name', '$description', '$price')";
+        $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
         
         $result = mysqli_query($connection, $query);
         
