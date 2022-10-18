@@ -3,6 +3,59 @@ include "functions.php";
 include "classes/class_Database.php";
 displayNavBar();
 
+
+if(isset($_POST['submit'])) {
+    echo "yes, information received"."<br>";
+    
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $product_id = $_POST['product_id'];
+    
+    
+    // basic form data validation
+    if($username && $password){
+    
+        echo $username."<br>";
+        echo $password."<br>";
+
+
+        // connect to localhost, default username = root ; default password = root
+        // 'loginapp' in this case is our database. 
+
+        $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
+
+        if($connection) {
+            echo "We are connected";
+        } else {
+            die ("Database connection failed!");
+        } 
+        
+        //query the database
+        $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
+        $query .= "VALUES ('$username', '$password')";
+        
+        $result = mysqli_query($connection, $query);
+        
+        // printing error message in case of query failure
+        if(!$result){
+            die('Query failed!' . mysqli_error());
+        }
+
+        
+        
+        
+    } else{
+        
+        echo "<br>"."The content fields cannot be blank!";
+    }
+    
+ 
+    
+}
+
+
 ?>
 
 <!DOCTYPE html>
