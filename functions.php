@@ -6,6 +6,8 @@ function displayNavBar(){
         echo "<a href='mainPage.php'>Home</a>  ";
         echo "<a href='shoppingCart.php'>Shopping Cart</a>  ";
         echo "<a href='adminPage.php'>Admin Page</a>  ";
+        echo "<a href='login.php'>Login</a>  ";
+        echo "<a href='productPage.php'>Item</a>  ";
         // You can add more pages here
         echo "<a href='https://www.google.com/'>Google</a> ";
         echo "<a href='/phpMyAdmin/index.php'>phpMyAdmin</a> ";
