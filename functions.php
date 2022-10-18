@@ -15,6 +15,10 @@ function displayNavBar(){
 
 }
 
+function cssRules(){
+    echo "body {font-family: 'Work Sans', sans-serif;}";
+}
+
 // function to read file and return headers and entries
 function readThisFile($filename){
     //echo "In readThisFile <br>";

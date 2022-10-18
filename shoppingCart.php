@@ -10,6 +10,10 @@ displayNavBar();
 <head>
     <meta charset="UTF-8">
     <title>Ecommerce - Shopping Cart </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <style><?php cssRules()?></style>
 </head>
 <body>
     <h1>Shopping cart: 0 items</h1>
