@@ -22,9 +22,14 @@ Development
             A: Just an array
 
 
-[]User page
-    []Set up user page visual structure
-    []Set up user page lnks
+[]Product page
+    []Clickable quantity
+    []Save into cookies
+
+[]Shopping Cart
+    []Shows amount of items
+    []Shows customer data
+    []Cookies should be deleted after purchase
     
 [x]Database
     [x]Set up database via PHPMyAdmin
