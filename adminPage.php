@@ -58,6 +58,43 @@ if(isset($_POST['submit'])) {
     
 }
 
+/*
+CONNECTING TO PRODUCTS AND GETTING DATA FROM PRODUCTS
+*/
+$host = 'localhost';
+$username = 'root';
+$password = 'root';
+$database = 'ecommerce';
+
+// creating a connection to database
+$connection = mysqli_connect($host,$username,$password,$database);
+
+if($connection){
+    echo "We are connected<br>";
+}else {
+    die ("Database connection failed");
+}
+
+//query the database
+$query = "SELECT product_id,product_name,image_name,description,price FROM products";
+
+$result = mysqli_query($connection, $query);
+        
+// printing error message in case of query failure
+if(!$result){
+    die('Query failed!' . mysqli_error($connection));
+}else {
+    echo "Entries Retrieved!<br>";
+}
+
+//read 1 row at a time
+
+while($row=mysqli_fetch_assoc($result)){
+    print_r($row);echo "<br>";
+}
+
+mysqli_close($connection);
+
 
 ?>
 
