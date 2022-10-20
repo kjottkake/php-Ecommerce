@@ -15,6 +15,7 @@ Development
     []Form to add items
         [x]Function
         []Add to class and methods
+        []How to add short image urls from unsplash
     []form to remove items
     Questions:
         16OCT2022
