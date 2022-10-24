@@ -22,6 +22,7 @@ displayNavBar();
     // Have a table to display current products
     genTable(7);
 
+    getDBData('product_name')
     // Names of products should be a hyperlink, than when clicked, will lead the user to the specific product page    
     
     
