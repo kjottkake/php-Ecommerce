@@ -10,10 +10,16 @@ class Product extends Database{
     
     
     // a method example, add other methods if needed. 
-     protected function addProductToDB(){
+    protected function addProductToDB(){
         
     }
+
+    //a method to displayProducts on page
+    protected function displayProducts(){
+
+    }
     
+
     
 }
 

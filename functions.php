@@ -133,4 +133,18 @@ function dbConnectTester(){
 
 }
 
+function genTable($size) {
+    echo "<table>";
+    for ($i = 0; $i < $size; $i++){
+        echo "<tr>";
+        echo "<td>$i</td>";
+        echo "<td>item_id</td>";
+        echo "<td>image</td>";
+        echo "<td>price</td>";
+        echo "<td>description</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+
 ?>

@@ -20,7 +20,8 @@ displayNavBar();
     <?php 
     
     // Have a table to display current products
-    
+    genTable(7);
+
     // Names of products should be a hyperlink, than when clicked, will lead the user to the specific product page    
     
     
