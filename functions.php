@@ -18,7 +18,9 @@ function displayNavBar(){
 }
 
 function cssRules(){
-    echo "body {font-family: 'Work Sans', sans-serif;}";
+    echo "body {font-family: 'Work Sans', sans-serif;}
+          img {width: 500px}
+    ";
 }
 
 // function to read file and return headers and entries
