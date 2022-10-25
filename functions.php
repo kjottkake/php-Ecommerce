@@ -163,11 +163,12 @@ function getDBData($field){
 
     //read 1 row at a time
 
-    while($row=mysqli_fetch_assoc($result)){
-        print_r($row);echo "<br>";
-    }
-
+    // while($row=mysqli_fetch_assoc($result)){
+    //     print_r($row);echo "<br>";
+    // }
+    $row=mysqli_fetch_assoc($result);
     mysqli_close($connection);
+    return $row;
 
 }
 
