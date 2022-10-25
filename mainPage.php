@@ -23,10 +23,16 @@ displayNavBar();
     genTable(7);
 
     // getDBData('product_name');
+    
+    //gets product from database using database function
     $product = getDBData('product_name');
+    $image = getDBData('image_name');
+    //gets product_name array of item
     $item = $product['product_name'];
+    $url = $image['image_name'];
     // Names of products should be a hyperlink, than when clicked, will lead the user to the specific product page    
     echo "<h1>$item</h1>";
+    echo "<img src=$url>";
     
     ?>
     
