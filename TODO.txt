@@ -6,8 +6,9 @@ Predevelopment
 
 Development
 []Main Page
-    []Set up Homepage visual structure
-    []Set up Homepage links
+    []Connect To Database
+    []Display Information from database
+        []When user clicks on item, goes to individual page
     
 []Admin page
     []Read data from database
