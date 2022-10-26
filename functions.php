@@ -17,6 +17,7 @@ function displayNavBar(){
 
 }
 
+
 function cssRules(){
     echo "body {font-family: 'Work Sans', sans-serif;}
           img {width: 500px}
@@ -168,9 +169,49 @@ function getDBData($field){
     // while($row=mysqli_fetch_assoc($result)){
     //     print_r($row);echo "<br>";
     // }
+
+    
     $row=mysqli_fetch_assoc($result);
     mysqli_close($connection);
     return $row;
+
+}
+
+function getProductName(){
+    $host = 'localhost';
+    $username = 'root';
+    $password = 'root';
+    //name of my database
+    $database = 'ecommerce';
+
+    // creating a connection to database
+    $connection = mysqli_connect($host,$username,$password,$database);
+
+    if($connection) {
+        echo "-----------------<br>";
+        echo "We are connected<br>";
+        echo "-----------------<br>";
+        echo "<br>";
+    } else {
+        die ("Database connection failed!");
+    } 
+
+      //query the database
+      $query = "SELECT product_name FROM products";
+
+        
+      $result = mysqli_query($connection, $query);
+      
+      // printing error message in case of query failure
+      if(!$result){
+          die('Query failed!' . mysqli_error());
+      }
+
+    //read 1 row at a time
+
+    while($row=mysqli_fetch_assoc($result)){
+        print_r($row);echo "<br>";
+    }
 
 }
 

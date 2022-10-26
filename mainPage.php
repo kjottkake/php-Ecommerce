@@ -22,6 +22,10 @@ displayNavBar();
     // Have a table to display current products
     genTable(7);
 
+    echo "<br>";
+    //get product name
+    getProductName();
+
     // getDBData('product_name');
     
     //gets product from database using database function
