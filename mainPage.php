@@ -25,7 +25,7 @@ displayNavBar();
     echo "<br>";
     //get product name
     getProductName();
-
+    getProductDescription();
     // getDBData('product_name');
     
     //gets product from database using database function
