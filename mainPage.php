@@ -22,6 +22,15 @@ displayNavBar();
     // Have a table to display current products
     genTable(7);
 
+
+    //testing associate array
+    // $header = array("productname", "stock", "sold");
+    // $cars = array ("shoes", "100", "100");
+    // $arr = createAssocArray($header, $cars);
+    // createTables($arr);
+
+
+
     echo "<br>";
     //get product name
     getProductName();
