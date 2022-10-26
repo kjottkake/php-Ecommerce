@@ -28,7 +28,7 @@ function cssRules(){
 function readThisFile($filename){
     //echo "In readThisFile <br>";
 
-    $file = fopen($filename, "r") or die("Unable to open file");
+    $file = fopen($filename, "r") or die("Unable to open file, something messed up.");
 
     //Output one line until end-of-file
     $idx = 0;
@@ -247,7 +247,7 @@ function getProductDescription(){
       }
 
     //read 1 row at a time
-
+      
     while($row=mysqli_fetch_assoc($result)['description']){
         print_r($row);echo "<br>";
     }

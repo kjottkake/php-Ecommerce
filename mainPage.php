@@ -31,8 +31,9 @@ displayNavBar();
     echo "<br>opening file<br>";
     $file = "testdata.csv";
     $arr = readThisFile($file);
-    createAssocArray($arr);
-
+    // $assArr = createAssocArray($arr[headersArray], $arr[valuesArray]);
+    // echo $arr[0][0];
+    createTable($assArr);
 
     echo "<br>";
     //get product name
