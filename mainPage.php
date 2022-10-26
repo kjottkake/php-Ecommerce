@@ -28,7 +28,10 @@ displayNavBar();
     // $cars = array ("shoes", "100", "100");
     // $arr = createAssocArray($header, $cars);
     // createTables($arr);
-
+    echo "<br>opening file<br>";
+    $file = "testdata.csv";
+    $arr = readThisFile($file);
+    createAssocArray($arr);
 
 
     echo "<br>";

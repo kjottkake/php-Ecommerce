@@ -50,7 +50,8 @@ function readThisFile($filename){
     }
 
     fclose($file);
-
+    // echo $headersArray[0];
+    // echo $headersArray[1];
     return array('headersArray' => $headersArray,
                  'valuesArray' => $valuesArray);
 
