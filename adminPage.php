@@ -1,61 +1,117 @@
 <?php
 include "functions.php";
 include "classes/class_Database.php";
+include "classes/class_Product.php";
 displayNavBar();
 
-
-if(isset($_POST['submit'])) {
-    echo "yes, information received"."<br>";
+postToDB();
+// $object = new Database;
+// $object->addProductToDB();
+//function which posts to db
+// if(isset($_POST['submit'])) {
+//     echo "yes, information received"."<br>";
     
     
-    // $username = $_POST['username'];
-    // $password = $_POST['password'];
+//     // $username = $_POST['username'];
+//     // $password = $_POST['password'];
 
-    $product_name = $_POST['product_name'];
-    $image_name = $_POST['image_name'];
-    $description = $_POST['description'];
-    $price = $_POST['price'];
+//     $product_name = $_POST['product_name'];
+//     $image_name = $_POST['image_name'];
+//     $description = $_POST['description'];
+//     $price = $_POST['price'];
     
-    // basic form data validation
-    if($product_name  && $image_name && $description && $price){
+//     // basic form data validation
+//     if($product_name  && $image_name && $description && $price){
     
-        echo $product_name."<br>";
-        echo $image_name."<br>";
-        echo $description."<br>";
-        echo $price."<br>";
+//         echo $product_name."<br>";
+//         echo $image_name."<br>";
+//         echo $description."<br>";
+//         echo $price."<br>";
 
-        // connect to localhost, default username = root ; default password = root
-        // 'loginapp' in this case is our database. 
+//         // connect to localhost, default username = root ; default password = root
+//         // 'loginapp' in this case is our database. 
 
-        $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
+//         $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
 
-        if($connection) {
-            echo "We are connected";
-        } else {
-            die ("Database connection failed!");
-        } 
+//         if($connection) {
+//             echo "We are connected";
+//         } else {
+//             die ("Database connection failed!");
+//         } 
         
-        //query the database
-        $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
-        $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
+//         //query the database
+//         $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
+//         $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
         
-        $result = mysqli_query($connection, $query);
+//         $result = mysqli_query($connection, $query);
         
-        // printing error message in case of query failure
-        if(!$result){
-            die('Query failed!' . mysqli_error());
+//         // printing error message in case of query failure
+//         if(!$result){
+//             die('Query failed!' . mysqli_error());
+//         }
+
+        
+        
+        
+//     } else{
+        
+//         echo "<br>"."The content fields cannot be blank!";
+//     }
+// }
+
+
+//function post to DB 
+function postToDB() {
+    if(isset($_POST['submit'])) {
+        echo "yes, information received"."<br>";
+        
+        
+        // $username = $_POST['username'];
+        // $password = $_POST['password'];
+    
+        $product_name = $_POST['product_name'];
+        $image_name = $_POST['image_name'];
+        $description = $_POST['description'];
+        $price = $_POST['price'];
+        
+        // basic form data validation
+        if($product_name  && $image_name && $description && $price){
+        
+            echo $product_name."<br>";
+            echo $image_name."<br>";
+            echo $description."<br>";
+            echo $price."<br>";
+    
+            // connect to localhost, default username = root ; default password = root
+            // 'loginapp' in this case is our database. 
+    
+            $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
+    
+            if($connection) {
+                echo "We are connected";
+            } else {
+                die ("Database connection failed!");
+            } 
+            
+            //query the database
+            $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
+            $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
+            
+            $result = mysqli_query($connection, $query);
+            
+            // printing error message in case of query failure
+            if(!$result){
+                die('Query failed!' . mysqli_error());
+            }
+    
+            
+            
+            
+        } else{
+            
+            echo "<br>"."The content fields cannot be blank!";
         }
-
-        
-        
-        
-    } else{
-        
-        echo "<br>"."The content fields cannot be blank!";
     }
-    
- 
-    
 }
 
 /*

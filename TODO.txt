@@ -4,6 +4,10 @@ Predevelopment
 [x]Read through project description
 [x]Break down project into sections
 
+General Questions
+[] Where to create object? for class? 
+
+
 Development
 []Main Page
     [x]Connect To Database
