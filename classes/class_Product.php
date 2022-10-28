@@ -2,8 +2,6 @@
 require_once "class_Database.php";
 echo "In class: Product<br>";
 
-// $obj = new Product();
-
 class Product extends Database{
     // properties example, add more properties if needed
     protected $product_Name;
@@ -59,7 +57,8 @@ class Product extends Database{
     //a method to displayProducts on page
     function displayProducts($resArray){
         echo "<table>";
-            
+        // echo "<pre>";
+        //     print_r($resArray);
         foreach ($resArray as $item){
             
             if ($isFirstRow == FALSE){
@@ -73,7 +72,10 @@ class Product extends Database{
                 //then print first row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
-                    echo "<td> $value </td>";
+                    if ($key == 'image_name'){
+                        echo "<td><img src=\"$value\"></td>";
+                    }
+                    // echo "<td> $value </td>";
                 }
                 echo "</tr>";
                 
@@ -83,7 +85,11 @@ class Product extends Database{
                 // then print every subsequent row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
+                    if ($key == 'image_name'){
+                        echo "<td><img src=\"$value\"></td>";
+                    }else {
                     echo "<td> $value </td>";
+                    }
                 }
                 echo "</tr>";
             }
