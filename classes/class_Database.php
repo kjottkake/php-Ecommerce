@@ -28,7 +28,7 @@ class Database{
     }
     
     protected function readFromTable($tableName){
-        echo "<br>THIS SHIT IS CONNECTED<br>";
+        // echo "<br>THIS SHIT IS CONNECTED<br>";
         echo "Database:readFromTable<br>";
         $connection = Database::connect();
         //query the database

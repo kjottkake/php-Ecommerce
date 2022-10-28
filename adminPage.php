@@ -117,7 +117,7 @@ function connectAndRetrieve(){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <style><?php cssRules()?></style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Hey cool dude, you're at the admin pageasdfadf</h1>

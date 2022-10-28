@@ -18,11 +18,15 @@ function displayNavBar(){
 }
 
 
-function cssRules(){
-    echo "body {font-family: 'Work Sans', sans-serif;}
-          img {width: 500px}
-    ";
-}
+// function cssRules(){
+//     echo "body {font-family: 'Work Sans', sans-serif;}
+//           img {width: 500px}
+//           th {
+//             padding: 12px;
+//             border: 1px solid red;
+//         }
+//     ";
+// }
 
 // function to read file and return headers and entries
 function readThisFile($filename){
