@@ -15,6 +15,7 @@ Development
         []When user clicks on item, goes to individual page
     
 []Admin page
+    []Connect to Database
     []Read data from database
     []Generate table
     []Form to add items
