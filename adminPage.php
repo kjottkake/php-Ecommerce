@@ -12,26 +12,11 @@ $object = new Product();
 $tableData = $object->readFromTable($tableName);
 $object->displayProducts($tableData);
 displayNavBar();
+
+//OLD FUNCTIONS;
 // postToDB();
 // connectAndRetrieve();
 // $object = new Database;
-
-// /*
-// BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
-// */
-// $tableName = "products";
-
-
-// $object = new Database;
-// //object to get products from DB
-// $object->readFromTable($tableName);
-// //object to display products from DB
-// // $object->displayProducts($object);
-
-// //END OOPROG
-
-
-
 
 //function post to DB 
 function postToDB() {
@@ -138,36 +123,21 @@ function connectAndRetrieve(){
     
     // Have a table to display current products
 
-        /*
+    /*
     BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
     */
-    echo "<br>Declaring Objects..<br>";
-    // $tableName = 'products';
-    // $object = new Database;
-    //object to get products from DB
 
-    // $tableData = $object->readFromTable($tableName);
-
-    //object to display products from DB
-    // $object->displayProducts($tableData);
-    // print_r($tableData);
     //END OOPROG
 
 
 
     // Add a form  to create a new product
+
+
+
     // Add functionality to delete an existing product
     ?>
 
-    <!-- db area  -->
-    <?php
-
-    //Test Code::::::
-    // echo "Database section: ";
-    // dbConnectTester();
-
-
-    ?>
     <h2>Add New Item</h2>
     <div class="container">
         
@@ -199,13 +169,8 @@ function connectAndRetrieve(){
                 </div>
                 
                 <input class="btn btn-primary" type="submit" name="submit" value="Submit" >
-                
-                
             </form>
-            
-        </div>
-        
-        
+        </div>   
     </div>
    
 </body>
