@@ -9,12 +9,14 @@ include "classes/class_Product.php";
 
 $tableName = "products";
 $object = new Product();
-$tableData = $object->readFromTable($tableName);
+$tableData = $object->readTable($tableName);
 $object->displayProducts($tableData);
+
+
 displayNavBar();
 
 //OLD FUNCTIONS;
-// postToDB();
+postToDB();
 // connectAndRetrieve();
 // $object = new Database;
 

@@ -57,12 +57,10 @@ class Product extends Database{
     }
 
     //a method to displayProducts on page
-    public function displayProducts($resArray){
+    function displayProducts($resArray){
         echo "<table>";
             
         foreach ($resArray as $item){
-            
-            
             
             if ($isFirstRow == FALSE){
                 // first print headers
@@ -94,6 +92,11 @@ class Product extends Database{
 
         }    
         echo "</table>";
+    }
+
+    function readTable($tableName){
+        $table = Database::readFromTable($tableName);
+        return $table;
     }
 
     //constructor for display

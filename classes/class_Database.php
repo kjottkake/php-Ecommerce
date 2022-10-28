@@ -27,7 +27,7 @@ class Database{
         mysqli_close($connection);
     }
     
-    public function readFromTable($tableName){
+    protected function readFromTable($tableName){
         echo "<br>THIS SHIT IS CONNECTED<br>";
         echo "Database:readFromTable<br>";
         $connection = Database::connect();
