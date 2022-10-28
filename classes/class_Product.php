@@ -72,10 +72,13 @@ class Product extends Database{
                 //then print first row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
-                    if ($key == 'image_name'){
+                    if($key == 'product_name'){
+                        echo "<td><a href=\"productPage.php\">$value</a></td>";
+                    }
+                    else if ($key == 'image_name'){
                         echo "<td><img src=\"$value\"></td>";
                     } else {
-                    echo "<td> $value </td>";
+                    echo "<td><h1> $value </h1></td>";
                     }
                 }
                 echo "</tr>";
@@ -86,10 +89,13 @@ class Product extends Database{
                 // then print every subsequent row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
-                    if ($key == 'image_name'){
+                    if($key == 'product_name'){
+                        echo "<td><a href=\"productPage.php\">$value</a></td>";
+                    }
+                    else if ($key == 'image_name'){ 
                         echo "<td><img src=\"$value\"></td>";
-                    }else {
-                    echo "<td> $value </td>";
+                    } else {
+                    echo "<td><h1> $value </h1></td>";
                     }
                 }
                 echo "</tr>";
