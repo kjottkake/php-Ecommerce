@@ -74,8 +74,9 @@ class Product extends Database{
                 foreach ($item as $key => $value){
                     if ($key == 'image_name'){
                         echo "<td><img src=\"$value\"></td>";
+                    } else {
+                    echo "<td> $value </td>";
                     }
-                    // echo "<td> $value </td>";
                 }
                 echo "</tr>";
                 
@@ -100,6 +101,7 @@ class Product extends Database{
         echo "</table>";
     }
 
+    //reads table from superclass, without exposing super class method readFromTable()
     function readTable($tableName){
         $table = Database::readFromTable($tableName);
         return $table;
