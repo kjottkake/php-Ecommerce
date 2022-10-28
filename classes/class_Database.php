@@ -3,8 +3,6 @@
 
 echo "In class: Database<br>";
 
-
-
 class Database{
     
     protected function connect(){
@@ -29,7 +27,8 @@ class Database{
         mysqli_close($connection);
     }
     
-    protected function readFromTable($tableName){
+    public function readFromTable($tableName){
+        echo "<br>THIS SHIT IS CONNECTED<br>";
         echo "Database:readFromTable<br>";
         $connection = Database::connect();
         //query the database
@@ -64,12 +63,12 @@ class Database{
 
     }
 
-    public function __construct($table){
-        $this->readFromTable($table);
-    }
+    //constructs table and stuff
+    // public function __construct($table){
+    //     $this->readFromTable($table);
+    // }
     
 }
-
 
 
 ?>

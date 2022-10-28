@@ -1,11 +1,20 @@
 <?php
+// Turn on error reporting:
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include "functions.php";
 include "classes/class_Database.php";
 include "classes/class_Product.php";
+
+$tableName = "products";
+$object = new Product();
+$tableData = $object->readFromTable($tableName);
+$object->displayProducts($tableData);
 displayNavBar();
 // postToDB();
 // connectAndRetrieve();
-
+// $object = new Database;
 
 // /*
 // BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
@@ -132,15 +141,16 @@ function connectAndRetrieve(){
         /*
     BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
     */
-    $tableName = "products";
-
-
-    $object = new Product;
+    echo "<br>Declaring Objects..<br>";
+    // $tableName = 'products';
+    // $object = new Database;
     //object to get products from DB
-    $object->readFromTable($tableName);
-    //object to display products from DB
-    $object->displayProducts($object);
 
+    // $tableData = $object->readFromTable($tableName);
+
+    //object to display products from DB
+    // $object->displayProducts($tableData);
+    // print_r($tableData);
     //END OOPROG
 
 

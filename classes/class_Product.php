@@ -2,6 +2,8 @@
 require_once "class_Database.php";
 echo "In class: Product<br>";
 
+// $obj = new Product();
+
 class Product extends Database{
     // properties example, add more properties if needed
     protected $product_Name;
@@ -55,7 +57,7 @@ class Product extends Database{
     }
 
     //a method to displayProducts on page
-    protected function displayProducts($resArray){
+    public function displayProducts($resArray){
         echo "<table>";
             
         foreach ($resArray as $item){
@@ -93,6 +95,11 @@ class Product extends Database{
         }    
         echo "</table>";
     }
+
+    //constructor for display
+    // public function __construct($arr){
+    //     $this->displayProducts($arr);
+    // }
     
 }
 
