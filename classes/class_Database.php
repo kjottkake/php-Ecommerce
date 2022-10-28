@@ -3,6 +3,8 @@
 
 echo "In class: Database<br>";
 
+
+
 class Database{
     
     protected function connect(){
@@ -60,6 +62,10 @@ class Database{
         
         
 
+    }
+
+    public function __construct($table){
+        $this->readFromTable($table);
     }
     
 }

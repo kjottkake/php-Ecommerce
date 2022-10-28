@@ -2,12 +2,6 @@
 require_once "class_Database.php";
 echo "In class: Product<br>";
 
-
-
-// $object = new Database;
-
-
-
 class Product extends Database{
     // properties example, add more properties if needed
     protected $product_Name;

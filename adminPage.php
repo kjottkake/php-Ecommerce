@@ -3,10 +3,26 @@ include "functions.php";
 include "classes/class_Database.php";
 include "classes/class_Product.php";
 displayNavBar();
-postToDB();
+// postToDB();
+// connectAndRetrieve();
+
+
+// /*
+// BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
+// */
+// $tableName = "products";
+
 
 // $object = new Database;
-// $object->addProductToDB();
+// //object to get products from DB
+// $object->readFromTable($tableName);
+// //object to display products from DB
+// // $object->displayProducts($object);
+
+// //END OOPROG
+
+
+
 
 //function post to DB 
 function postToDB() {
@@ -47,10 +63,7 @@ function postToDB() {
             if(!$result){
                 die('Query failed!' . mysqli_error());
             }
-    
-            
-            
-            
+        //else statement if the content fields are blank    
         } else{
             
             echo "<br>"."The content fields cannot be blank!";
@@ -58,43 +71,45 @@ function postToDB() {
     }
 }
 
-/*
-CONNECTING TO PRODUCTS AND GETTING DATA FROM PRODUCTS
-*/
-$host = 'localhost';
-$username = 'root';
-$password = 'root';
-$database = 'ecommerce';
 
-// creating a connection to database
-$connection = mysqli_connect($host,$username,$password,$database);
+function connectAndRetrieve(){
+    /*
+    CONNECTING TO PRODUCTS AND GETTING DATA FROM PRODUCTS
+    */
+    $host = 'localhost';
+    $username = 'root';
+    $password = 'root';
+    $database = 'ecommerce';
 
-if($connection){
-    echo "We are connected<br>";
-}else {
-    die ("Database connection failed");
+    // creating a connection to database
+    $connection = mysqli_connect($host,$username,$password,$database);
+
+    if($connection){
+        echo "We are connected<br>";
+    }else {
+        die ("Database connection failed");
+    }
+
+    //query the database
+    $query = "SELECT product_id,product_name,image_name,description,price FROM products";
+
+    $result = mysqli_query($connection, $query);
+            
+    // printing error message in case of query failure
+    if(!$result){
+        die('Query failed!' . mysqli_error($connection));
+    }else {
+        echo "Entries Retrieved!<br>";
+    }
+
+    //read 1 row at a time
+
+    while($row=mysqli_fetch_assoc($result)){
+        print_r($row);echo "<br>";
+    }
+
+    mysqli_close($connection);
 }
-
-//query the database
-$query = "SELECT product_id,product_name,image_name,description,price FROM products";
-
-$result = mysqli_query($connection, $query);
-        
-// printing error message in case of query failure
-if(!$result){
-    die('Query failed!' . mysqli_error($connection));
-}else {
-    echo "Entries Retrieved!<br>";
-}
-
-//read 1 row at a time
-
-while($row=mysqli_fetch_assoc($result)){
-    print_r($row);echo "<br>";
-}
-
-mysqli_close($connection);
-
 
 ?>
 
@@ -113,6 +128,23 @@ mysqli_close($connection);
     <?php
     
     // Have a table to display current products
+
+        /*
+    BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
+    */
+    $tableName = "products";
+
+
+    $object = new Product;
+    //object to get products from DB
+    $object->readFromTable($tableName);
+    //object to display products from DB
+    $object->displayProducts($object);
+
+    //END OOPROG
+
+
+
     // Add a form  to create a new product
     // Add functionality to delete an existing product
     ?>
