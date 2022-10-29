@@ -21,7 +21,16 @@ displayNavBar();
 <body>
     
     <?php 
-    
+    $pageUrl = $_GET['id'];
+
+    $id = 4;
+
+    echo "deez nuts $pageUrl";
+
+    $obj = new Product;
+    $objData = $obj->getIndividualItem($pageUrl);
+    $obj->displayProducts($objData);
+
     // Display specific information about product selected in the previous page. 
     // Note that the product page can only be accessed from the main page. 
     // Add a form : with a select field to choose quantity, and a submit button named "Add to cart", which will populate the shopping cart. 

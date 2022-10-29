@@ -72,8 +72,9 @@ class Product extends Database{
                 //then print first row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
+                    $item_id = $value;
                     if($key == 'product_name'){
-                        echo "<td><a href=\"productPage.php?id=$value\">$value</a></td>";
+                        echo "<td><a href=\"productPage.php?id=$item_id\">$value</a></td>";
                     }
                     else if ($key == 'image_name'){
                         echo "<td><img src=\"$value\"></td>";
@@ -103,6 +104,34 @@ class Product extends Database{
         }    
         echo "</table>";
     }
+
+    //function to display only 1 item for the product page
+    function getIndividualItem($item_id){
+        //connect to db
+        $connection = Database::connect();
+        $query = "SELECT * FROM products WHERE product_id = $item_id;";
+
+        $result = mysqli_query($connection, $query);
+
+        //error checking
+        // printing error message in case of query failure
+        if(!$result){
+            die('Query failed!' . mysqli_error($connection));
+        }else {
+            //echo "Entries Retrieved!<br>";
+        }
+
+        //read 1 row at a time
+        $idx = 0;
+        while($row=mysqli_fetch_assoc($result)){
+            //print_r($row);echo "<br>";
+            $resArray[$idx] = $row;
+            $idx++;
+        }
+        Database::disconnect($connection);
+        return $resArray;
+    }
+
 
     //reads table from superclass, without exposing super class method readFromTable()
     function readTable($tableName){
