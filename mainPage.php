@@ -23,13 +23,11 @@ displayNavBar();
 <body>
     <h1>Homepage</h1>
     <?php 
-    $tableName = "products";
-    $object = new Product();
-    $tableData = $object->readTable($tableName);
-    $object->displayProducts($tableData);
-    
     // Have a table to display current products
-    
+    $tableName = "products";    //sets variable for table to access
+    $object = new Product();    //creates new Product Object
+    $tableData = $object->readTable($tableName); //reads table from readTable() and puts into varible
+    $object->displayProducts($tableData);  //displays products using displayProducts
 
     // Names of products should be a hyperlink, than when clicked, will lead the user to the specific product page    
 

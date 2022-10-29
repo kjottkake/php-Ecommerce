@@ -100,9 +100,6 @@ class Product extends Database{
                 }
                 echo "</tr>";
             }
-            
-                
-
         }    
         echo "</table>";
     }

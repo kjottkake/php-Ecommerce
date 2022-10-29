@@ -12,16 +12,17 @@ Development
 []Main Page
     [x]Connect To Database
     []Display Information from database
+        [x]Display Catelogue
         []When user clicks on item, goes to individual page
     
 []Admin page
-    []Connect to Database
-    []Read data from database
-    []Generate table
+    [x]Connect to Database
+    [x]Read data from database
+    [x]Generate table
     []Form to add items
         [x]Function
         []Add to class and methods
-        []How to add short image urls from unsplash
+        [x]How to add short image urls from unsplash
     []form to remove items
     Questions:
         16OCT2022
