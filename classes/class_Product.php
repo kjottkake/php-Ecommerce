@@ -6,11 +6,11 @@ class Product extends Database{
     // properties example, add more properties if needed
     protected $product_Name;
     protected $description;
-    //Jason Adding Additional Properties
+    // Additional Properties
     protected $image_name;
     protected $price;
     
-    // a method example, add other methods if needed. 
+    // Method of adding products to Database
     protected function addProductToDB(){
         if(isset($_POST['submit'])) {
             echo "yes, information received"."<br>";
@@ -73,7 +73,7 @@ class Product extends Database{
                 echo "<tr>";
                 foreach ($item as $key => $value){
                     if($key == 'product_name'){
-                        echo "<td><a href=\"productPage.php\">$value</a></td>";
+                        echo "<td><a href=\"productPage.php?id=$value\">$value</a></td>";
                     }
                     else if ($key == 'image_name'){
                         echo "<td><img src=\"$value\"></td>";
@@ -90,7 +90,7 @@ class Product extends Database{
                 echo "<tr>";
                 foreach ($item as $key => $value){
                     if($key == 'product_name'){
-                        echo "<td><a href=\"productPage.php\">$value</a></td>";
+                        echo "<td><a href=\"productPage.php?id=$value\">$value</a></td>";
                     }
                     else if ($key == 'image_name'){ 
                         echo "<td><img src=\"$value\"></td>";

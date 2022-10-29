@@ -1,4 +1,7 @@
 <?php
+// Turn on error reporting:
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include "functions.php";
 include "classes/class_Product.php";
 displayNavBar();
@@ -18,12 +21,7 @@ displayNavBar();
 <body>
     
     <?php 
-    $tableName = "products";
-    $productObj = new Product;
-    $dbObj = new Database;
-
-    $arr = $productObj->readFromTable($tableName);
-    $obj->displayProducts($arr);
+    
     // Display specific information about product selected in the previous page. 
     // Note that the product page can only be accessed from the main page. 
     // Add a form : with a select field to choose quantity, and a submit button named "Add to cart", which will populate the shopping cart. 
