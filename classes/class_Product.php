@@ -72,8 +72,8 @@ class Product extends Database{
                 //then print first row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
-                    $item_id = $value;
                     if($key == 'product_name'){
+                        // echo "$item_id";
                         echo "<td><a href=\"productPage.php?id=$item_id\">$value</a></td>";
                     }
                     else if ($key == 'image_name'){
