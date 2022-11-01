@@ -46,7 +46,7 @@ Development
 []Login Page
     []Form to Login
     []Validate Login
-    
+
     
 [x]Database
     [x]Set up database via PHPMyAdmin
@@ -69,6 +69,9 @@ Development
         
     []User Class
         []Methods
+            []createAdmin()
+            []addUser()
+            [x]getUser()
 
 
 Deploy
