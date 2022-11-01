@@ -54,6 +54,11 @@ class Product extends Database{
         }
     }
 
+    //method to delete item
+    function deleteProduct(){
+        
+    }
+
     //a method to displayProducts on page
     function displayProducts($resArray){
         echo "<table>";

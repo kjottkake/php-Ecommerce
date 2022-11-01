@@ -25,11 +25,13 @@ Development
     [x]Connect to Database
     [x]Read data from database
     [x]Generate table
-    []Form to add items
+    [x]Form to add items
         [x]Function
-        []Add to class and methods
+        [x]Add to class and methods
         [x]How to add short image urls from unsplash
     []form to remove items
+        []function to remove item
+        []method to remove item
     Questions:
         16OCT2022
         [x]What is an associate array? 

@@ -18,15 +18,34 @@ function displayNavBar(){
 }
 
 
-// function cssRules(){
-//     echo "body {font-family: 'Work Sans', sans-serif;}
-//           img {width: 500px}
-//           th {
-//             padding: 12px;
-//             border: 1px solid red;
-//         }
-//     ";
-// }
+function showAllData() {
+    $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
+
+    if($connection) {
+        echo "We are connected"; 
+    } else {
+        die ("Database connection failed!");
+    } 
+
+    
+    //query the database
+    $query = "SELECT * FROM products";
+    $result = mysqli_query($connection, $query);
+    // printing error message in case of query failure
+    if(!$result){
+        die('Query failed!' . mysqli_error());
+    }
+
+    // fetching $id from database dynamically
+    //but this is not possible without querying the database above first. 
+    while($row = mysqli_fetch_assoc($result)){
+        $id = $row['product_id']; // saving the ids in a variable
+        $name = $row['product_name'];
+    echo "<option value='$id'>$name</option>"; //html in php encapsulation
+    }
+}
+
+
 
 // function to read file and return headers and entries
 function readThisFile($filename){
