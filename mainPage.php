@@ -21,8 +21,9 @@ displayNavBar();
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Homepage</h1>
-    <?php 
+    <?php
+    $user = 'Jason';
+    echo "<h1>Hello $user, welcome back to Jimazon!</h1>"; 
     // Have a table to display current products
     $tableName = "products";    //sets variable for table to access
     $object = new Product();    //creates new Product Object
