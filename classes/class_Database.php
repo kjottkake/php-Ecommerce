@@ -4,7 +4,7 @@
 echo "In class: Database<br>";
 
 class Database{
-    
+    //function for connecting to database
     protected function connect(){
         echo "Database : connect<br>";
         
@@ -22,11 +22,11 @@ class Database{
         }
         return $connection;
     }
-    
+    //function for disconnecting from database
     protected function disconnect($connection){
         mysqli_close($connection);
     }
-    
+    //function that reads from table
     protected function readFromTable($tableName){
         // echo "<br>THIS SHIT IS CONNECTED<br>";
         echo "Database:readFromTable<br>";
@@ -55,13 +55,36 @@ class Database{
         return $resArray;
 
     }
-    
+
+    //function that deletes rows in database
+    protected function deleteRowInDB($table, $column){
+        //establish connection
+        $connection = Database::connect();
+
+        $id = $_POST['id'];
+
+        // making the query to be sent to database
+        $query = "DELETE FROM $table ";
+        
+        // where to delete them 
+        $query .= " WHERE $column = $id "; 
+
+        echo $query."<br>";
+
+        $result = mysqli_query($connection, $query);
+        if(!$result){
+            die("Query Failed!" . mysqli_error($connection));
+        }
+
+        //disconnect
+        Database::disconnect($connection);
+    }
+
     // sanitize input
     protected function cleanVar($var, $connection){
         
-        
-
     }
+
 
     //constructs table and stuff
     // public function __construct($table){

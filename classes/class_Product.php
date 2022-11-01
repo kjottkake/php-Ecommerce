@@ -56,7 +56,9 @@ class Product extends Database{
 
     //method to delete item
     function deleteProduct(){
-        
+        $table = 'products';
+        $column = 'product_id';
+        Database::deleteRowInDB($table, $column);
     }
 
     //a method to displayProducts on page
@@ -145,12 +147,11 @@ class Product extends Database{
         return $table;
     }
 
-
-
     //read user input for new product
     function getNewItem(){
         Product::addProductToDB();
     }
+
 
     //constructor for display
     // public function __construct($arr){

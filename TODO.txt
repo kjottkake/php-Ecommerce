@@ -16,10 +16,6 @@ Development
         [x]Display Catelogue
         []When user clicks on item, goes to individual page
     
-
-
-
-
 []Admin page
     [x]Connect to Database
     [x]Read data from database
@@ -37,15 +33,9 @@ Development
         []Different sorting options
 
 
-
-
-
 []Product page
     []Clickable quantity
     []Save into cookies
-
-
-
 
 
 []Shopping Cart
@@ -62,6 +52,21 @@ Development
         16OCT2022
         [x]How to connect PHPMyAdmin with DB.txt or vise versa?
         [x]What is an associate array?
+
+[]Classes
+    []Database Class
+        []Methods
+            []deleteRow()
+
+    []Order Class
+        []Methods
+
+    []Product Class
+        []Methods
+        
+    []User Class
+        []Methods
+
 
 Deploy
 
