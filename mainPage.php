@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include "classes/class_Product.php";
+include "classes/class_User.php";
 include "functions.php";
 
 displayNavBar();
@@ -22,8 +23,10 @@ displayNavBar();
 </head>
 <body>
     <?php
-    $user = 'Jason';
-    echo "<h1>Hello $user, welcome back to Jimazon!</h1>"; 
+    $user = new User();
+    $userName = $user->getUser();
+    // $userName = 'Jason';
+    echo "<h1>Hello $userName, welcome back to Jixpress!</h1>"; 
     // Have a table to display current products
     $tableName = "products";    //sets variable for table to access
     $object = new Product();    //creates new Product Object
