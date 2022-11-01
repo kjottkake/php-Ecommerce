@@ -1,6 +1,11 @@
 <?php
-include "functions.php";
+// Turn on error reporting:
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include "classes/class_User.php";
+include "functions.php";
+
 
 displayNavBar();
 
@@ -30,27 +35,34 @@ displayNavBar();
     
     
     ?>
-    
+
     <div class="container">
       
       <div class="col-sm-6">
           
           <form action="login_create.php" method="post">
-              <div class="form-group">
+                <div class="form-group">
                   <label for="username">Username</label> 
                   <input type="text" name="username" class="form-control">
                   
-              </div>
-              
-            <div class="form-group">
-                 <label for="password">Password</label>
-                  <input type="password" name="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label> 
+                  <input type="text" name="email" class="form-control">
                   
-            </div>
-             
-             <input class="btn btn-primary" type="submit" name="submit" value="Submit" >
+                </div>
               
               
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control">
+                    
+                </div>
+                
+                <input class="btn btn-primary" type="submit" name="submit" value="Submit" >
+                
+                
           </form>
           
       </div>

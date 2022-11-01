@@ -9,9 +9,7 @@ function displayNavBar(){
         echo "<a href='login.php'>Login</a>  ";
         echo "<a href='productPage.php'>Item</a>  ";
         // You can add more pages here
-        echo "<a href='https://www.google.com/'>Google</a> ";
         echo "<a href='/phpMyAdmin/index.php'>phpMyAdmin</a> ";
-        echo "<a href='index.html'>HTML Test Page</a> ";
     echo "</nav>";
     echo "<br><br>";
 

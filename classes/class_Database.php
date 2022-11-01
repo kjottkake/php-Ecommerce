@@ -22,10 +22,12 @@ class Database{
         }
         return $connection;
     }
+
     //function for disconnecting from database
     protected function disconnect($connection){
         mysqli_close($connection);
     }
+    
     //function that reads from table
     protected function readFromTable($tableName){
         // echo "<br>THIS SHIT IS CONNECTED<br>";
