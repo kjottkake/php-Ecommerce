@@ -3,9 +3,8 @@ List of things to do:
 Predevelopment
 [x]Read through project description
 [x]Break down project into sections
-
 General Questions
-[] Where to create object? for class? 
+[x] Where to create object? for class? 
 
 
 Development
@@ -30,13 +29,12 @@ Development
         [x]Add to class and methods
         [x]How to add short image urls from unsplash
     []form to remove items
-        []function to remove item
+        [x]function to remove item
         []method to remove item
-    Questions:
-        16OCT2022
-        [x]What is an associate array? 
-            A: Just an array
-
+    []Table to list number of orders in process
+        []Fields to list country
+        []Fields to list date 
+        []Different sorting options
 
 
 
@@ -54,6 +52,9 @@ Development
     []Shows amount of items
     []Shows customer data
     []Cookies should be deleted after purchase
+
+[]Login Page
+    
     
 [x]Database
     [x]Set up database via PHPMyAdmin
