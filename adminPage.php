@@ -74,9 +74,7 @@ if(isset($_POST['submit'])){
             </form>
         </div>   
     </div>
-    <?php
-    // Add functionality to delete an existing product
-    ?>
+    <!-- deleting item -->
     <h2>
         Delete Item
     </h2>
@@ -84,7 +82,6 @@ if(isset($_POST['submit'])){
         <div class="form-group">
                     <select name="id" id="">
                     <?php
-                        
                         showAllData();
                     ?>
                     </select>

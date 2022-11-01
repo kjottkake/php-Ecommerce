@@ -56,13 +56,14 @@ Development
 []Classes
     []Database Class
         []Methods
-            []deleteRow()
+            [x]deleteRow()
 
     []Order Class
         []Methods
 
     []Product Class
         []Methods
+            [x]deleteProduct()
         
     []User Class
         []Methods
