@@ -1,5 +1,6 @@
 <?php
 include "functions.php";
+include "classes/class_User.php";
 
 displayNavBar();
 

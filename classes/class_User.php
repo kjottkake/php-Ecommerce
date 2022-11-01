@@ -3,7 +3,12 @@
 class User extends Database {
     protected $username;
     protected $password;
-    protected $role;
+    protected $isAdmin;
+
+    //function for creating admin account
+    protected function createAdmin(){
+        
+    }
 
     //function for adding user
     protected function addUser(){
