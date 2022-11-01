@@ -34,7 +34,8 @@ Development
 
 
 []Product page
-    []Clickable quantity
+    [x]Clickable quantity
+    []Create JSON file called ShoppingCart.json
     []Save into cookies
 
 
