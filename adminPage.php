@@ -7,65 +7,62 @@ include "functions.php";
 include "classes/class_Database.php";
 include "classes/class_Product.php";
 
-$tableName = "products";
-$object = new Product();
-$tableData = $object->readTable($tableName);
-$object->displayProducts($tableData);
-
-
 displayNavBar();
 
+
 //OLD FUNCTIONS;
-postToDB();
+// postToDB();
+
+
 // connectAndRetrieve();
 // $object = new Database;
 
 //function post to DB 
-function postToDB() {
-    if(isset($_POST['submit'])) {
-        echo "yes, information received"."<br>";
+// function postToDB() {
+//     if(isset($_POST['submit'])) {
+//         echo "yes, information received"."<br>";
         
-        $product_name = $_POST['product_name'];
-        $image_name = $_POST['image_name'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
+//         $product_name = $_POST['product_name'];
+//         $image_name = $_POST['image_name'];
+//         $description = $_POST['description'];
+//         $price = $_POST['price'];
         
-        // basic form data validation
-        if($product_name  && $image_name && $description && $price){
+//         // basic form data validation
+//         if($product_name  && $image_name && $description && $price){
         
-            echo $product_name."<br>";
-            echo $image_name."<br>";
-            echo $description."<br>";
-            echo $price."<br>";
+//             echo $product_name."<br>";
+//             echo $image_name."<br>";
+//             echo $description."<br>";
+//             echo $price."<br>";
     
-            // connect to localhost, default username = root ; default password = root
-            // 'loginapp' in this case is our database. 
+//             // connect to localhost, default username = root ; default password = root
+//             // 'loginapp' in this case is our database. 
     
-            $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
+//             $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
     
-            if($connection) {
-                echo "We are connected";
-            } else {
-                die ("Database connection failed!");
-            } 
+//             if($connection) {
+//                 echo "We are connected";
+//             } else {
+//                 die ("Database connection failed!");
+//             } 
             
-            //query the database
-            $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
-            $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
+//             //query the database
+//             $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
+//             $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
             
-            $result = mysqli_query($connection, $query);
+//             $result = mysqli_query($connection, $query);
             
-            // printing error message in case of query failure
-            if(!$result){
-                die('Query failed!' . mysqli_error());
-            }
-        //else statement if the content fields are blank    
-        } else{
+//             // printing error message in case of query failure
+//             if(!$result){
+//                 die('Query failed!' . mysqli_error());
+//             }
+//         //else statement if the content fields are blank    
+//         } else{
             
-            echo "<br>"."The content fields cannot be blank!";
-        }
-    }
-}
+//             echo "<br>"."The content fields cannot be blank!";
+//         }
+//     }
+// }
 
 
 function connectAndRetrieve(){
@@ -124,6 +121,10 @@ function connectAndRetrieve(){
     <?php
     
     // Have a table to display current products
+    $tableName = "products";
+    $object = new Product();
+    $tableData = $object->readTable($tableName);
+    $object->displayProducts($tableData);
 
     /*
     BEGIN OBJECT ORIENTED PROGRAMMING MADNESS
@@ -134,7 +135,7 @@ function connectAndRetrieve(){
 
 
     // Add a form  to create a new product
-
+    $object->getNewItem();
 
 
     // Add functionality to delete an existing product

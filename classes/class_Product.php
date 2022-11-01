@@ -72,6 +72,7 @@ class Product extends Database{
                 //then print first row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
+                    print_r($item);
                     if($key == 'product_name'){
                         // echo "$item_id";
                         echo "<td><a href=\"productPage.php?id=$item_id\">$value</a></td>";
@@ -137,6 +138,13 @@ class Product extends Database{
     function readTable($tableName){
         $table = Database::readFromTable($tableName);
         return $table;
+    }
+
+
+
+    //read user input for new product
+    function getNewItem(){
+        Product::addProductToDB();
     }
 
     //constructor for display
