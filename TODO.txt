@@ -46,7 +46,8 @@ Development
 []Login Page
     []Form to Login
     []Validate Login
-
+    [x]Create a new user
+        [x]Add new user to DB
     
 [x]Database
     [x]Set up database via PHPMyAdmin
@@ -70,7 +71,7 @@ Development
     []User Class
         []Methods
             []createAdmin()
-            []addUser()
+            [x]addUser()
             [x]getUser()
 
 

@@ -9,6 +9,10 @@ include "functions.php";
 
 displayNavBar();
 
+
+$user = new User;
+$user->createUser();
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +44,7 @@ displayNavBar();
       
       <div class="col-sm-6">
           
-          <form action="login_create.php" method="post">
+          <form action="login.php" method="post">
                 <div class="form-group">
                   <label for="username">Username</label> 
                   <input type="text" name="username" class="form-control">

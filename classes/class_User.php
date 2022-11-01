@@ -20,13 +20,13 @@ class User extends Database {
             
             $username = $_POST['username'];
             $password = $_POST['password'];
-
+            $email = $_POST['email'];
              // basic form data validation
-             if($username && $password){
+             if($username && $password && $email){
     
             echo $username."<br>";
             echo $password."<br>";
-
+            echo $email."<br>";
 
             // connect to localhost, default username = root ; default password = root
             // 'loginapp' in this case is our database. 
@@ -39,8 +39,8 @@ class User extends Database {
             } 
             
             //query the database
-            $query = "INSERT INTO users(username,password)";
-            $query .= "VALUES ('$username', '$password')";
+            $query = "INSERT INTO users(username,password,email)";
+            $query .= "VALUES ('$username', '$password', '$email')";
             
             $result = mysqli_query($connection, $query);
             
@@ -71,6 +71,10 @@ class User extends Database {
         $username = $row['username'];
 
         return $username;
+    }
+
+    function createUser(){
+        User::addUser();
     }
 }
 
