@@ -4,9 +4,14 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include "functions.php";
+include "classes/class_User.php";
 include "classes/class_Product.php";
 include "classes/class_Order.php";
 displayNavBar();
+
+getItem();
+getUser();
+getTime();
 
 ?>
 
@@ -23,6 +28,10 @@ displayNavBar();
 <body>
     
     <?php 
+    //check to see who's logged in
+    $user = new User;
+    $loggedInUser = $user->getUser();
+
     $pageUrl = $_GET['id'];
 
     $id = 4;

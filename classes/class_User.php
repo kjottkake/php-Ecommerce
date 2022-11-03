@@ -6,6 +6,7 @@ class User extends Database {
     protected $username;
     protected $password;
     protected $isAdmin;
+    protected $isLoggedIn;
 
     //function for creating admin account
     protected function createAdmin(){
@@ -55,6 +56,10 @@ class User extends Database {
                 echo "<br>"."The username and password fields cannot be blank!";
             }
         }
+
+    }
+
+    protected function loggedIn(){
 
     }
 
