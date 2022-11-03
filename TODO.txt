@@ -48,6 +48,7 @@ Development
 []Login Page
     []Form to Login
     []Validate Login
+        []Check if user is logged in.
     [x]Create a new user
         [x]Add new user to DB
     
@@ -76,7 +77,7 @@ Development
             []createAdmin()
             [x]addUser()
             [x]getUser()
-
+            []checkIfLoggedIn()
 
 Deploy
 
