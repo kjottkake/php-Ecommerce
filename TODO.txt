@@ -35,6 +35,7 @@ Development
 
 []Product page
     [x]Clickable quantity
+    []Need to create class which adds order to orders table 
     []Create JSON file called ShoppingCart.json
     []Save into cookies
 
@@ -64,7 +65,8 @@ Development
 
     []Order Class
         []Methods
-
+            []addOrder()
+            []deleteOrder()
     []Product Class
         []Methods
             [x]deleteProduct()
