@@ -1,76 +1,63 @@
 <?php 
 require_once "class_Product.php";
 class Order extends Product {
-    protected function addOrder() {
-        // if(isset($_POST['submit'])) {
-        //     echo "yes, information received"."<br>";
-            
-        //     $product_name = $_POST['product_name'];
-        //     $image_name = $_POST['image_name'];
-        //     $description = $_POST['description'];
-        //     $price = $_POST['price'];
-            
-        //     // basic form data validation
-        //     if($product_name  && $image_name && $description && $price){
-            
-        //         echo $product_name."<br>";
-        //         echo $image_name."<br>";
-        //         echo $description."<br>";
-        //         echo $price."<br>";
-
-        //         $connection = mysqli_connect('localhost', 'root', 'root', 'ecommerce');
-        
-        //         if($connection) {
-        //             echo "We are connected";
-        //         } else {
-        //             die ("Database connection failed!");
-        //         } 
-                
-        //         //query the database
-        //         $query = "INSERT INTO products(product_id,product_name,image_name,description,price)";
-        //         $query .= "VALUES (NULL, '$product_name', '$image_name', '$description', '$price')";
-                
-        //         $result = mysqli_query($connection, $query);
-                
-        //         // printing error message in case of query failure
-        //         if(!$result){
-        //             die('Query failed!' . mysqli_error());
-        //         }
-
-        //     } else{
-                
-        //         echo "<br>"."The content fields cannot be blank!";
-        //     }
-        // }
-
-
-
-
-
+    protected function addOrder($id) {
         //get customer_id
-        $customer_id = 1;
-
+        $customer_id = Order::getUser();
         //get product_id
-
+        $product_id = $id;
+        //get the time
+        $time = Order::getTime();
         //get quantity
-
+        $quantity = Order::getQuantity();
         //insert into orders the customer_id, product_id, time and quantity
+        
+        $connection = Database::connect();
+
+        if($connection) {
+            echo "We are connected";
+        } else {
+            die ("Database connection failed!");
+        } 
+        
+        //query the database
+        $query = "INSERT INTO orders(customer_id,product_id,time,quantity)";
+        $query .= "VALUES ('$customer_id', '$product_id', '$time', '$quantity')";
+        
+        // $result = mysqli_query($connection, $query);
+
+        // printing error message in case of query failure
+        // if(!$result){
+        //     die('Query failed!' . mysqli_error());
+        // }
     }
 
     protected function getUser(){
-
+        // $connection = Database::connection();
+        $user_id = 1;
+        return $user_id;
     }
 
     protected function getTime(){
-
+        $date = date('Y-m-d H:i:s');
+        return $date;
     }
 
-    protected function getProductId(){
-
-    }
+    // protected function getProductId($id){
+    //     $product_id = $id; 
+    //     return $product_id;
+    // }
 
     protected function getQuantity(){
-        
+        if(isset($_POST['submit'])) {
+                echo "yes, information received"."<br>";
+                $quantity = $_POST['quantity'];
+                return $quantity;
+        }
+    }
+
+    function assembleOrder($id){
+        Order::addOrder($id);
     }
 }
 ?>

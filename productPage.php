@@ -9,9 +9,11 @@ include "classes/class_Product.php";
 include "classes/class_Order.php";
 displayNavBar();
 
-getItem();
-getUser();
-getTime();
+$obj = new Order;
+$obj->assembleOrder($id);
+// getItem();
+// getUser();
+// getTime();
 
 ?>
 
