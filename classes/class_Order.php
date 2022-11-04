@@ -36,9 +36,11 @@ class Order extends Database {
         
         $result = mysqli_query($connection, $query);
 
-        //printing error message in case of query failure
+        // printing error message in case of query failure
         if(!$result){
-            die('Query failed!' . mysqli_error());
+            die('Query failed!' . mysqli_error($connection));
+        }else {
+            echo "Entry Added!<br>";
         }
 
     }
@@ -50,7 +52,8 @@ class Order extends Database {
     }
 
     protected function getTime(){
-        $date = date('Y-m-d H:i:s');
+        // $date = date('Y-m-d H:i:s');
+        $date = time();
         return $date;
     }
 

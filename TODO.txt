@@ -10,12 +10,11 @@ General Questions
 Development
 
 
-[]Main Page
+[x]Main Page
     [x]Connect To Database
     [x]Display Information from database
         [x]Display Catelogue
         [x]When user clicks on item, goes to individual page
-    []Show orders
     
 []Admin page
     [x]Connect to Database
@@ -25,10 +24,11 @@ Development
         [x]Function
         [x]Add to class and methods
         [x]How to add short image urls from unsplash
-    []form to remove items
+    [x]form to remove items
         [x]function to remove item
-        []method to remove item
+        [x]method to remove item
     []Table to list number of orders in process
+        []INSER JOIN FUNCTIONS 
         []Fields to list country
         []Fields to list date 
         []Different sorting options
@@ -67,7 +67,7 @@ Development
 
     []Order Class
         []Methods
-            []addOrder()
+            [x]addOrder()
             []deleteOrder()
     []Product Class
         []Methods
@@ -83,3 +83,7 @@ Development
 Deploy
 
 Documentation
+
+Notes 
+Changed int(20) to int(32) for time in orders table 
+Changed varchar(32) to varchar(256) for image_name 

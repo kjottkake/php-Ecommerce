@@ -88,5 +88,9 @@ if(isset($_POST['submit'])){
         </div>
         <input class="btn btn-primary" type="submit" name="submit" value="Delete" >
     </form>
+
+    <?php 
+    //insert join function to get customer and order information 
+    ?>
 </body>
 </html>
