@@ -79,10 +79,15 @@ class Product extends Database{
                 //then print first row of values
                 echo "<tr>";
                 foreach ($item as $key => $value){
-                    print_r($item);
+                    // echo '<pre>' . $value; 
+                    // echo $value['item_id'];
+                    // print_r($item);
+                    
+
                     if($key == 'product_name'){
                         // echo "$item_id";
-                        echo "<td><a href=\"productPage.php?id=$item_id\">$value</a></td>";
+                        $itemId = $item['product_id'];
+                        echo "<td><a href=\"productPage.php?id=$itemId\">$value</a></td>";
                     }
                     else if ($key == 'image_name'){
                         echo "<td><img src=\"$value\"></td>";
@@ -99,7 +104,8 @@ class Product extends Database{
                 echo "<tr>";
                 foreach ($item as $key => $value){
                     if($key == 'product_name'){
-                        echo "<td><a href=\"productPage.php?id=$value\">$value</a></td>";
+                        $itemId = $item['product_id'];
+                        echo "<td><a href=\"productPage.php?id=$itemId\">$value</a></td>";
                     }
                     else if ($key == 'image_name'){ 
                         echo "<td><img src=\"$value\"></td>";

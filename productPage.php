@@ -9,6 +9,7 @@ include "classes/class_Product.php";
 include "classes/class_Order.php";
 displayNavBar();
 
+$id = 16;
 $obj = new Order;
 $obj->assembleOrder($id);
 // getItem();
@@ -50,7 +51,7 @@ $obj->assembleOrder($id);
     // Shopping cart information can be preserved in a cookie. If the user closes the browser and reopens the page, the shopping cart information can be repopulated from the cookie. 
     // Modify the shopping cart link in the navigation bar when an item is added to it.     
     ?>
-    <form action="productPage.php" method="post">
+    <form action="productPage.php?id=<?php echo $pageUrl?>" method="post">
         <label for="quantity">Quantity (between 1 and 5):</label>
         <input type="number" id="quantity" name="quantity" min="1" max="5">
         <!-- <input type="submit" value="Submit"> -->
