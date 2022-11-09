@@ -74,33 +74,53 @@ class Order extends Database {
         Order::addOrder($id);
     }
 
-    // function generateJSON($id, $quantity){
-    //     $array = Array(
-    //         "0" => Array ()
-    //         "product_id" => "$id",
-    //         "quantity" => "$quantity"
-            
-    //     )
-    // }
+    function generateJSON($id){
+        $quantity = Order::getQuantity();
+        //check if file exists
+        if(file_exists('./data/shoppingCart.json')){
+            echo "Files exists, adding concents to file";
+            //add data to file 
+            $current_data=file_get_contents('./data/shoppingCart.json');
+            $array_data=json_decode($current_data, true);
 
-    function generateJSON(){
-       $array = Array (
-         "0" => Array (
-            "id" => "16",
-            "quantity" => "4"
-         ),
-         "1" => Array (
-            "id" => "17",
-            "quantity" => "5"
-         )
-         );
+            $new_data=array(
+                "product_id" => $id,
+                "quantity" => $quantity
+            );
 
-        $json = json_encode($array);
-        
-        echo "$json";
+            $array_data[]=$new_data;
+            $json = json_encode($array_data);
+        } else {
+            echo "json file does not exist";
+        }
 
-        file_put_contents("./data/shoppingCart.json", $json);
+
+        // $array = Array(
+        //     "0" => Array (
+        //     "product_id" => "$id",
+        //     "quantity" => "$quantity"
+        //     )
+        // );
     }
+
+    // function generateJSON(){
+    //    $array = Array (
+    //      "0" => Array (
+    //         "id" => "16",
+    //         "quantity" => "4"
+    //      ),
+    //      "1" => Array (
+    //         "id" => "17",
+    //         "quantity" => "5"
+    //      )
+    //      );
+
+    //     $json = json_encode($array);
+        
+    //     echo "$json";
+
+    //     file_put_contents("./data/shoppingCart.json", $json);
+    // }
 
 
     function populateCart(){
