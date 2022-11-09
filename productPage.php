@@ -59,6 +59,11 @@ displayNavBar();
     //create new order
     $obj = new Order;
     $obj->assembleOrder($pageUrl);
+    $obj->generateJSON();
+
+    //product_id and quantity should be added to a JSON file named shoppingCart.json
+    //Also set a cookie called "cart" to 1
+    //Set cookie to expire in 1 week
     ?>
     
     

@@ -73,5 +73,38 @@ class Order extends Database {
     function assembleOrder($id){
         Order::addOrder($id);
     }
+
+    // function generateJSON($id, $quantity){
+    //     $array = Array(
+    //         "0" => Array ()
+    //         "product_id" => "$id",
+    //         "quantity" => "$quantity"
+            
+    //     )
+    // }
+
+    function generateJSON(){
+       $array = Array (
+         "0" => Array (
+            "id" => "16",
+            "quantity" => "4"
+         ),
+         "1" => Array (
+            "id" => "17",
+            "quantity" => "5"
+         )
+         );
+
+        $json = json_encode($array);
+        
+        echo "$json";
+
+        file_put_contents("./data/shoppingCart.json", $json);
+    }
+
+
+    function populateCart(){
+
+    }
 }
 ?>
