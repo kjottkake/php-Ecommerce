@@ -25,9 +25,9 @@ class User extends Database {
              // basic form data validation
              if($username && $password && $email){
     
-            echo $username."<br>";
-            echo $password."<br>";
-            echo $email."<br>";
+            // echo $username."<br>";
+            // echo $password."<br>";
+            // echo $email."<br>";
 
             // connect to localhost, default username = root ; default password = root
             // 'loginapp' in this case is our database. 

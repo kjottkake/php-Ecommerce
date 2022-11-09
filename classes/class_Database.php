@@ -6,7 +6,7 @@ echo "In class: Database<br>";
 class Database{
     //function for connecting to database
     protected function connect(){
-        echo "Database : connect<br>";
+        // echo "Database : connect<br>";
         
         $host = 'localhost';
         $username = 'root';
@@ -16,7 +16,7 @@ class Database{
         $connection = mysqli_connect($host,$username,$password,$database);
 
         if($connection){
-            echo "We are connected!<br>";
+            // echo "We are connected!<br>";
         }else {
             die ("Database connection failed");
         }
@@ -31,7 +31,7 @@ class Database{
     //function that reads from table
     protected function readFromTable($tableName){
         // echo "<br>THIS SHIT IS CONNECTED<br>";
-        echo "Database:readFromTable<br>";
+        // echo "Database:readFromTable<br>";
         $connection = Database::connect();
         //query the database
         $query = "SELECT * FROM $tableName";

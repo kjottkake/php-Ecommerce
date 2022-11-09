@@ -28,7 +28,7 @@ Development
         [x]function to remove item
         [x]method to remove item
     []Table to list number of orders in process
-        []INSER JOIN FUNCTIONS 
+        []INSERT JOIN FUNCTIONS 
         []Fields to list country
         []Fields to list date 
         []Different sorting options
@@ -43,7 +43,8 @@ Development
 
 []Shopping Cart
     []Shows amount of items
-    []Shows customer data
+        []Tally total price
+    []Form to get customer data
     []Cookies should be deleted after purchase
 
 []Login Page
