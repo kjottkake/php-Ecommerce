@@ -90,6 +90,8 @@ class Order extends Database {
 
             $array_data[]=$new_data;
             $json = json_encode($array_data);
+
+            file_put_contents("./data/shoppingCart.json", $json);
         } else {
             echo "json file does not exist";
         }
