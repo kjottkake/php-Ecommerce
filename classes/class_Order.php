@@ -96,13 +96,12 @@ class Order extends Database {
             echo "json file does not exist";
         }
 
+    }
 
-        // $array = Array(
-        //     "0" => Array (
-        //     "product_id" => "$id",
-        //     "quantity" => "$quantity"
-        //     )
-        // );
+    function setCookie(){
+        $cookie_name = "cart";
+        $cookie_value = 1;
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
     }
 
 
