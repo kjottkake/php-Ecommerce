@@ -22,7 +22,7 @@ displayNavBar();
     $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
     $jsonObj = json_decode($jsonDataFromFile);
 
-    var_dump($jsonObj)
+    var_dump($jsonObj);
 
 
     // Cookie can be used to store product ID and quantity of the products in the shopping cart. 
