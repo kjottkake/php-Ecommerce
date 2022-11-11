@@ -46,21 +46,15 @@ class Order extends Database {
     }
 
     protected function getUser(){
-        // $connection = Database::connection();
         $user_id = 1;
         return $user_id;
     }
 
     protected function getTime(){
-        // $date = date('Y-m-d H:i:s');
+        //gets time in miliseconds 
         $date = time();
         return $date;
     }
-
-    // protected function getProductId($id){
-    //     $product_id = $id; 
-    //     return $product_id;
-    // }
 
     protected function getQuantity(){
         if(isset($_POST['submit'])) {
@@ -78,17 +72,14 @@ class Order extends Database {
     function generateJSON($id){
         $found = false; 
         $quantity = Order::getQuantity();
-        //check if file exists
+        //checking if the json file exists on directory
         if(file_exists('./data/shoppingCart.json')){
-            echo "Files exists, adding contents to file";
-            //add data to file 
+            echo "Files exists, adding contents to file"; //message alerting user file is found
+            //gets data from file found 
             $current_data=file_get_contents('./data/shoppingCart.json');
-            $array_data=json_decode($current_data, true);
+            $array_data=json_decode($current_data, true); //decodes json data from data from file
 
-            //check array data 
-            // print_r($array_data);
-
-            //check if item exists, update quantity if it is there
+            //check if item appears already in JSON data
             foreach ($array_data as $key => $value) {
                 if ($value['product_id']==$id) {
                     //update
@@ -100,9 +91,11 @@ class Order extends Database {
                     file_put_contents("./data/shoppingCart.json", $json);
                 }
             }
+
+            //if there isn't a repeat entry in JSON data
             if ($found == false) {
                 echo "repeat not found!!!";
-                $new_data=array(
+                $new_data=array( //set new data to be written to JSON file.
                     "product_id" => $id,
                     "quantity" => $quantity
                 );
@@ -157,4 +150,8 @@ class Order extends Database {
 
     }
 }
+
+//Code References:
+//setCookie() referred from https://www.w3schools.com/php/php_cookies.asp
+
 ?>
