@@ -37,8 +37,8 @@ Development
 []Product page
     [x]Clickable quantity
     [x]Create JSON file called when add to cart is clicked ShoppingCart.json
-        []Update amount based on product id if user adds more to item 
-    []Save into cookies
+        [x]Update amount based on product id if user adds more to item 
+    [x]Save into cookies
 
 
 []Shopping Cart

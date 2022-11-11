@@ -9,10 +9,6 @@ include "classes/class_Product.php";
 include "classes/class_Order.php";
 displayNavBar();
 
-// $id = 16;
-// $obj = new Order;
-// $obj->assembleOrder($id);
-
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +27,12 @@ displayNavBar();
     //check to see who's logged in
     $user = new User;
     $loggedInUser = $user->getUser();
-    $pageUrl = $_GET['id'];
+    $product_id = $_GET['id'];
 
-    // $id = 4;
-
-    echo "<h1>product id $pageUrl </h1>";
+    echo "<h1>product id $product_id </h1>";
 
     $obj = new Product;
-    $objData = $obj->getIndividualItem($pageUrl);   
+    $objData = $obj->getIndividualItem($product_id);   
     $obj->displayProducts($objData);
 
     // Display specific information about product selected in the previous page. 
@@ -46,10 +40,8 @@ displayNavBar();
     // Add a form : with a select field to choose quantity, and a submit button named "Add to cart", which will populate the shopping cart. 
     // Shopping cart information can be preserved in a cookie. If the user closes the browser and reopens the page, the shopping cart information can be repopulated from the cookie. 
     // Modify the shopping cart link in the navigation bar when an item is added to it.     
-    // $obj = new Order;
-    // $obj->assembleOrder($pageUrl);
     ?>
-    <form action="productPage.php?id=<?php echo $pageUrl?>" method="post">
+    <form action="productPage.php?id=<?php echo $product_id?>" method="post">
         <label for="quantity">Quantity (between 1 and 5):</label>
         <input type="number" id="quantity" name="quantity" min="1" max="5">
         <!-- <input type="submit" value="Submit"> -->
@@ -58,13 +50,13 @@ displayNavBar();
     <?php
     //create new order
     $obj = new Order;
-    $obj->assembleOrder($pageUrl);
-    $obj->generateJSON($pageUrl);
-    $obj->setcookie();
-
+    $obj->assembleOrder($product_id);
     //product_id and quantity should be added to a JSON file named shoppingCart.json
+    $obj->generateJSON($product_id);
     //Also set a cookie called "cart" to 1
     //Set cookie to expire in 1 week
+    $obj->setcookie();
+    
     ?>
     
     

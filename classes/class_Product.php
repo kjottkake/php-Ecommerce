@@ -1,6 +1,6 @@
 <?php
 require_once "class_Database.php";
-echo "In class: Product<br>";
+// echo "In class: Product<br>";
 
 class Product extends Database{
     // properties example, add more properties if needed

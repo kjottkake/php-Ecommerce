@@ -7,9 +7,9 @@ function displayNavBar(){
         echo "<a href='shoppingCart.php'>Shopping Cart</a>  ";
         echo "<a href='adminPage.php'>Admin Page</a>  ";
         echo "<a href='login.php'>Login</a>  ";
-        echo "<a href='productPage.php'>Item</a>  ";
+        // echo "<a href='productPage.php'>Item</a>  ";
         // You can add more pages here
-        echo "<a href='/phpMyAdmin/index.php'>phpMyAdmin</a> ";
+        // echo "<a href='/phpMyAdmin/index.php'>phpMyAdmin</a> ";
     echo "</nav>";
     echo "<br><br>";
 
@@ -134,24 +134,6 @@ echo "<table>";
     }    
 echo "</table>";
     
-}
-
-
-function dbConnectTester(){
-    $host = 'localhost';
-    $username = 'root';
-    $password = 'root';
-    //name of my database
-    $database = 'ecommerce';
-
-    $connection = mysqli_connect($host,$username,$password,$database);
-
-    if($connection){
-        echo "SUCCESS! We're connected to $database<br>";
-    }else {
-        die ("Database connection failed -- SOMETHING FUCKY IS HAPPENING HERE.");
-    }
-
 }
 
 ?>

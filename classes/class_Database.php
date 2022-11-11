@@ -1,7 +1,7 @@
 <?php // superclass definition : Database
 // contains Database related methods. 
 
-echo "In class: Database<br>";
+// echo "In class: Database<br>";
 
 class Database{
     //function for connecting to database
