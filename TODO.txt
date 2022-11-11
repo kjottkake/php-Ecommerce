@@ -44,6 +44,9 @@ Development
     []Shows amount of items
         []Tally total price
     []Form to get customer data
+        []If you have an account 'Login'
+        []If you wish to create an account get customer details
+        []Else checkout as guest, get customer details 
     []Cookies should be deleted after purchase
 
 []Login Page
@@ -61,8 +64,8 @@ Development
         [x]What is an associate array?
 
 []Classes
-    []Database Class
-        []Methods
+    [x]Database Class
+        [x]Methods
             [x]deleteRow()
 
     []Order Class
