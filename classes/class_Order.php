@@ -42,7 +42,7 @@ class Order extends Database {
         }else {
             echo "Entry Added!<br>";
         }
-
+        Database::disconnect($connection);
     }
 
     protected function getUser(){
@@ -120,21 +120,21 @@ class Order extends Database {
 
     }
 
-    //checks to see if item has previously been created
-    function updateJSON($id){
-        $quantity = Order::getQuantity();
-        $current_data=file_get_contents('./data/shoppingCart.json');
-        $array_data=json_decode($current_data, true);
+    // //checks to see if item has previously been created
+    // function updateJSON($id){
+    //     $quantity = Order::getQuantity();
+    //     $current_data=file_get_contents('./data/shoppingCart.json');
+    //     $array_data=json_decode($current_data, true);
 
-        //check if item exists, update quantity if it is there
-        foreach ($array_data as $key => $value) {
-            if ($value['product_id']==$id) {
-                //update
-                $array_data[$key]['quantity']= $array_data[$key]['quantity']+$quantity;
-                $doesExist = true; 
-            } 
-        }
-    }
+    //     //check if item exists, update quantity if it is there
+    //     foreach ($array_data as $key => $value) {
+    //         if ($value['product_id']==$id) {
+    //             //update
+    //             $array_data[$key]['quantity']= $array_data[$key]['quantity']+$quantity;
+    //             $doesExist = true; 
+    //         } 
+    //     }
+    // }
 
 
    
