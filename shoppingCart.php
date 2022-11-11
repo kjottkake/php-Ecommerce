@@ -30,12 +30,21 @@ displayNavBar();
     $jsonObj = json_decode($jsonDataFromFile, true);
     // var_dump($jsonObj);
     $total = 0;
+
+    echo "<h1>Items in Cart:</h1>";
     foreach($jsonObj as $key => $value){
         echo '<br>Item ID: ' . $value["product_id"] ;
         echo 'Quantity: ' . $value["quantity"] . '<br>';
         $total = $value["quantity"] + $total;
         $objData = $obj->getIndividualItem($value["product_id"]);
         $obj->displayProducts($objData);  
+    }
+
+    foreach($jsonObj as $key => $value){
+        echo '<br>Item ID: ' . $value["product_id"] ;
+        echo " Item name: ";
+        echo " Price: ";
+        echo 'Quantity: ' . $value["quantity"] . '<br>';
     }
 
     // Cookie can be used to store product ID and quantity of the products in the shopping cart. 

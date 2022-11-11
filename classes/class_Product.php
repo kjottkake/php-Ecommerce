@@ -158,7 +158,9 @@ class Product extends Database{
         Product::addProductToDB();
     }
 
-
+    function getPrice($id){
+        $connection = Database::connect();
+    }
     //constructor for display
     // public function __construct($arr){
     //     $this->displayProducts($arr);
