@@ -74,6 +74,7 @@ class Order extends Database {
         Order::addOrder($id);
     }
 
+    //function for generating JSON file
     function generateJSON($id){
         $quantity = Order::getQuantity();
         //check if file exists
@@ -82,6 +83,17 @@ class Order extends Database {
             //add data to file 
             $current_data=file_get_contents('./data/shoppingCart.json');
             $array_data=json_decode($current_data, true);
+
+            //check array data 
+            // print_r($array_data);
+
+            //check if item exists, update quantity if it is there
+            foreach ($array_data as $key => $value) {
+                if ($value['product_id']==$id) {
+                    //update
+                    $array_data[$key]['quantity']= $array_data[$key]['quantity']+$quantity;
+                } 
+            }
 
             $new_data=array(
                 "product_id" => $id,
@@ -92,37 +104,34 @@ class Order extends Database {
             $json = json_encode($array_data);
 
             file_put_contents("./data/shoppingCart.json", $json);
-        } else {
+        } else { //if the file does not exist, display error message, this will eventually be replaced by creating a json file
             echo "json file does not exist";
         }
 
     }
+
+    //checks to see if item has previously been created
+    function checkJSON($id){
+        $quantity = Order::getQuantity();
+        $current_data=file_get_contents('./data/shoppingCart.json');
+        $array_data=json_decode($current_data, true);
+        
+        //check if item exists, update quantity if it is there
+        foreach ($array_data as $key => $value) {
+            if ($value['product_id']==$id) {
+                //update
+                $array_data[$key]['quantity']= $array_data[$key]['quantity']+$quantity;
+            } 
+        }
+    }
+
+   
 
     function setCookie(){
         $cookie_name = "cart";
         $cookie_value = 1;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
     }
-
-
-    // function generateJSON(){
-    //    $array = Array (
-    //      "0" => Array (
-    //         "id" => "16",
-    //         "quantity" => "4"
-    //      ),
-    //      "1" => Array (
-    //         "id" => "17",
-    //         "quantity" => "5"
-    //      )
-    //      );
-
-    //     $json = json_encode($array);
-        
-    //     echo "$json";
-
-    //     file_put_contents("./data/shoppingCart.json", $json);
-    // }
 
 
     function populateCart(){
