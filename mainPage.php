@@ -15,7 +15,7 @@ displayNavBar();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ecommerce - Main Page </title>
+    <title>Jixpress - Buy now, regret later!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
@@ -25,8 +25,6 @@ displayNavBar();
     <?php
     $user = new User();
     $userName = $user->getUser();
-
-    
     echo "<h1>Hello $userName, welcome back to Jixpress!</h1>"; 
     // Have a table to display current products
     $tableName = "products";    //sets variable for table to access
@@ -34,9 +32,6 @@ displayNavBar();
     $tableData = $object->readTable($tableName); //reads table from readTable() and puts into varible
     $object->displayProducts($tableData);  //displays products using displayProducts
 
-    // Names of products should be a hyperlink, than when clicked, will lead the user to the specific product page    
-
-    
     ?>
     
     

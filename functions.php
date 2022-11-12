@@ -1,10 +1,21 @@
 <?php
 
 function displayNavBar(){
+    $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
+    $jsonObj = json_decode($jsonDataFromFile, true);
+    $totalItems = 0;
+    foreach($jsonObj as $key => $value){
+        $itemQuantity = $value["quantity"];
+        $totalItems = $totalItems + $itemQuantity;
+    }
     echo "<nav>";
 
         echo "<a href='mainPage.php'>Home</a>  ";
-        echo "<a href='shoppingCart.php'>Shopping Cart</a>  ";
+        if ($totalItems == 0){
+            echo "<a href='shoppingCart.php'>Shopping Cart</a>  ";
+        } else if ($totalItems > 0) {
+            echo "<a href='shoppingCart.php'>Shopping Cart ($totalItems)</a>  ";
+        }
         echo "<a href='adminPage.php'>Admin Page</a>  ";
         echo "<a href='login.php'>Login</a>  ";
         // echo "<a href='productPage.php'>Item</a>  ";
