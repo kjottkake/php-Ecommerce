@@ -29,16 +29,16 @@ displayNavBar();
     $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
     $jsonObj = json_decode($jsonDataFromFile, true);
     // var_dump($jsonObj);
-    $total = 0;
+    $totalItems = 0;
 
     echo "<h1>Items in Cart:</h1>";
-    foreach($jsonObj as $key => $value){
-        echo '<br>Item ID: ' . $value["product_id"] ;
-        echo 'Quantity: ' . $value["quantity"] . '<br>';
-        $total = $value["quantity"] + $total;
-        $objData = $obj->getIndividualItem($value["product_id"]);
-        $obj->displayProducts($objData);  
-    }
+    // foreach($jsonObj as $key => $value){
+    //     echo '<br>Item ID: ' . $value["product_id"] ;
+    //     echo 'Quantity: ' . $value["quantity"] . '<br>';
+    //     $total = $value["quantity"] + $total;
+    //     $objData = $obj->getIndividualItem($value["product_id"]);
+    //     $obj->displayProducts($objData);  
+    // }
 
     echo "<table>";
     $grandTotal = 0;
@@ -48,7 +48,10 @@ displayNavBar();
         $itemName = $obj->getValue($id, 'product_name');
         $itemQuantity = $value["quantity"];
         $itemTotal = $itemPrice * $itemQuantity;
+
+        //caculations
         $grandTotal = $grandTotal + $itemTotal;
+        $totalItems = $totalItems + $itemQuantity;
         // echo '<br>Item ID: ' . $value["product_id"] ;   
         // echo  $obj->getValue($id, 'product_name');
         // echo " price:  ";
@@ -62,12 +65,13 @@ displayNavBar();
         echo "<th><b>". $itemTotal."</b><th>";
         echo "<tr>";    
     }
-    echo "<tr>Total in Cart: $grandTotal<tr>";
     echo "</table>";
+    echo "<h1>Total: $grandTotal</h1>";
+    echo "<h1>Current Items in Cart: $totalItems</h1>";  
     // Cookie can be used to store product ID and quantity of the products in the shopping cart. 
     // Add a button for "Pay", when clicked, a form should appear for the customer to fill in his details, with a final button named "confirm Pay", which adds the order onto the database. 
     // After the order has been added to the database, cookie for the shopping cart should be destroyed. 
-    echo "<h1>Current Items in Cart: $total</h1>";    
+      
     ?>
     
     
