@@ -56,7 +56,8 @@ displayNavBar();
     //Also set a cookie called "cart" to 1
     //Set cookie to expire in 1 week
     $obj->setcookie();
-    
+    //refreshes page so that shopping cart in navbar can reflect correct amount of items
+    header("Refresh:0");
     ?>
     
     
