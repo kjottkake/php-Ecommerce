@@ -116,28 +116,17 @@ class Order extends Database {
             // file_put_contents("./data/shoppingCart.json", $json);
         } else { //if the file does not exist, display error message, this will eventually be replaced by creating a json file
             echo "json file does not exist";
+            $new_data=array(
+                "product_id" => $id,
+                "quantity" => $quantit
+            );
+
+            $array_data[]=$new_data;
+            $json = json_encode($array_data);
+            file_put_contents("./data/shoppingCart.json", $json);
         }
 
     }
-
-    // //checks to see if item has previously been created
-    // function updateJSON($id){
-    //     $quantity = Order::getQuantity();
-    //     $current_data=file_get_contents('./data/shoppingCart.json');
-    //     $array_data=json_decode($current_data, true);
-
-    //     //check if item exists, update quantity if it is there
-    //     foreach ($array_data as $key => $value) {
-    //         if ($value['product_id']==$id) {
-    //             //update
-    //             $array_data[$key]['quantity']= $array_data[$key]['quantity']+$quantity;
-    //             $doesExist = true; 
-    //         } 
-    //     }
-    // }
-
-
-   
 
     function setCookie(){
         $cookie_name = "cart";
@@ -145,10 +134,6 @@ class Order extends Database {
         setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
     }
 
-
-    function populateCart(){
-
-    }
 }
 
 //Code References:
