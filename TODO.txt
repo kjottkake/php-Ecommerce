@@ -34,7 +34,7 @@ Development
         []Different sorting options
 
 
-[]Product page
+[x]Product page
     [x]Clickable quantity
     [x]Create JSON file called when add to cart is clicked ShoppingCart.json
         [x]Update amount based on product id if user adds more to item 
@@ -42,8 +42,8 @@ Development
 
 
 []Shopping Cart
-    []Shows amount of items
-        []Tally total price
+    [x]Shows amount of items
+        [x]Tally total price
     []Form to get customer data
         []If you have an account 'Login'
         []If you wish to create an account get customer details

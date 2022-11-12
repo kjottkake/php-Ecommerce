@@ -40,13 +40,30 @@ displayNavBar();
         $obj->displayProducts($objData);  
     }
 
+    echo "<table>";
+    $grandTotal = 0;
     foreach($jsonObj as $key => $value){
-        echo '<br>Item ID: ' . $value["product_id"] ;
-        echo " Item name: ";
-        echo " Price: ";
-        echo 'Quantity: ' . $value["quantity"] . '<br>';
+        $id = $value["product_id"];
+        $itemPrice = $obj->getValue($id, "price");
+        $itemName = $obj->getValue($id, 'product_name');
+        $itemQuantity = $value["quantity"];
+        $itemTotal = $itemPrice * $itemQuantity;
+        $grandTotal = $grandTotal + $itemTotal;
+        // echo '<br>Item ID: ' . $value["product_id"] ;   
+        // echo  $obj->getValue($id, 'product_name');
+        // echo " price:  ";
+        // // echo $obj->getValue($id, 'product_name') . "Item name: ";
+        // echo $obj->getValue($id, "price");
+        // echo ' Quantity: ' . $value["quantity"] . '<br>';
+        echo "<tr>";
+        echo "<th>". $itemName ."<th>";
+        echo "<th>". $itemPrice ."<th>";
+        echo "<th>". $itemQuantity."<th>";
+        echo "<th><b>". $itemTotal."</b><th>";
+        echo "<tr>";    
     }
-
+    echo "<tr>Total in Cart: $grandTotal<tr>";
+    echo "</table>";
     // Cookie can be used to store product ID and quantity of the products in the shopping cart. 
     // Add a button for "Pay", when clicked, a form should appear for the customer to fill in his details, with a final button named "confirm Pay", which adds the order onto the database. 
     // After the order has been added to the database, cookie for the shopping cart should be destroyed. 

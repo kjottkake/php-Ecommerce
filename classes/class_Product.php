@@ -158,8 +158,15 @@ class Product extends Database{
         Product::addProductToDB();
     }
 
-    function getPrice($id){
+    //returns the value of a particular name field from sql database table
+    function getValue($id, $name){
         $connection = Database::connect();
+        $query = "SELECT * FROM products WHERE product_id = $id;";
+        $result = mysqli_query($connection, $query);
+        $data=mysqli_fetch_assoc($result);
+        $value = ($data[$name]);
+
+        return $value;
     }
     //constructor for display
     // public function __construct($arr){
