@@ -20,11 +20,16 @@ adminPage.php - this page displays the items of the product table of the ecommer
 ### classes folder
 This folder contains the various classes for this project.
 ### data folder
-This folder contains a text file to setup the mySql Database
+This folder contains a text file to setup the mySql Database, and eventually a json file will be generated and stored in this folder. 
 
 ## Classes Explanation
-
 ### Database
+The class of database is the superclass of the various classes. Here we have various methods which manipulates and aids to basic functionalities. 
+
+connect() - This function helps to establish a connection to the mysql database. This returns the database connection.
+
+disconnect() - Disconnects the function and takes in the argument of connection. 
+
 
 ### Order
 

@@ -30,8 +30,6 @@ class Database{
     
     //function that reads from table
     protected function readFromTable($tableName){
-        // echo "<br>THIS SHIT IS CONNECTED<br>";
-        // echo "Database:readFromTable<br>";
         $connection = Database::connect();
         //query the database
         $query = "SELECT * FROM $tableName";
@@ -113,13 +111,6 @@ class Database{
         return $resArray;
     }
 
-    //constructs table and stuff
-    // public function __construct($table){
-    //     $this->readFromTable($table);
-    // }
-
-
-    
 }
 
 
