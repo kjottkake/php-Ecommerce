@@ -38,6 +38,59 @@ disconnect() - Disconnects the function and takes in the argument of connection.
 ### User
 
 ## Testing Instructions
+First put the ecommerce folder into your htdocs folder or equivalent for MAMP.
+
+Next establish the database by navigating to 
+
+http://localhost/phpMyAdmin/index.php
+
+Then create the database using the DB.txt file provided in the data folder
+NOTE: I have changed the following to fit my data values better:
+Changed int(20) to int(32) for time in orders table 
+Changed varchar(32) to varchar(256) for image_name 
+
+Now you have a database which is formatted.
+
+I suggest you then go into the admin page and begin adding products.
+
+I have the following suggested test values:
+
+Product name:
+Nike Shoes
+Image Url:
+https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+Description:
+Shoes
+Price:
+2000
+
+Product name:
+Adidas
+Image Url:
+https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+Description:
+Cool shoes 
+Price:
+1500
+
+Product name:
+Chanel Nr. 5
+Image Url:
+https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1904&q=80
+Description:
+Smells good
+Price:
+3456
+
+Once these have been added, feel free to test out the deletion option. 
+
+From here please navigate to the main page, and test out individual pages by clicking on individual items.
+
+
+
+
+
+
 
 
 
