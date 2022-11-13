@@ -86,6 +86,12 @@ Once these have been added, feel free to test out the deletion option.
 
 From here please navigate to the main page, and test out individual pages by clicking on individual items.
 
+With the individual items you can test out adding them to the shopping cart. A JSON file called shoppingCart.json will be created in the data folder. 
+
+The shopping cart page will display the number of items in the cart, the sub total, and the total. 
+
+The shopping cart link in the navbar will also displaly the number of items in the cart.
+
 
 
 
