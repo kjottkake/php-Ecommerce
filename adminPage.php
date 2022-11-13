@@ -36,7 +36,12 @@ if(isset($_POST['submit'])){
     // Have a table to display current products
     $tableName = "products";
     $object = new Product();
+    //lists out products
     $tableData = $object->readTable($tableName);
+    $object->displayProducts($tableData);
+    //lists out orders
+    echo "<h1>Current Orders:</h1>";
+    $tableData  = $object->displayOrders();
     $object->displayProducts($tableData);
 
     // Add a form  to create a new product

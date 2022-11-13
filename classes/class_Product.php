@@ -153,6 +153,11 @@ class Product extends Database{
         return $table;
     }
 
+    function displayOrders(){
+        $table = Database::showListOfOrders();
+        return $table;
+    }
+
     //read user input for new product
     function getNewItem(){
         Product::addProductToDB();

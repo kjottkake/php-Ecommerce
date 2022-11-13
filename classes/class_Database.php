@@ -87,13 +87,38 @@ class Database{
         
     }
 
+    function showListOfOrders(){
+        $connection = Database::connect();
+        $query = "SELECT orders.product_id, orders.quantity, customers.firstname, customers.country from orders INNER JOIN customers ON orders.customer_id=customers.customer_id";
+        $result = mysqli_query($connection, $query);
+
+        $result = mysqli_query($connection, $query);
+
+        // printing error message in case of query failure
+        if(!$result){
+            die('Query failed!' . mysqli_error($connection));
+        }else {
+            //echo "Entries Retrieved!<br>";
+        }
+
+        //read 1 row at a time
+        $idx = 0;
+        while($row=mysqli_fetch_assoc($result)){
+            //print_r($row);echo "<br>";
+            $resArray[$idx] = $row;
+            $idx++;
+        }
+
+        Database::disconnect($connection);
+        return $resArray;
+    }
 
     //constructs table and stuff
     // public function __construct($table){
     //     $this->readFromTable($table);
     // }
 
-    
+
     
 }
 
