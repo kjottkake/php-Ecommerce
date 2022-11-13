@@ -84,8 +84,8 @@ Development
             [x]addUser()
             [x]getUser()
             []checkIfLoggedIn()
-[]Security Features
-    []Sanitize
+[x]Security Features
+    [x]Sanitize HTML
 
 
 
