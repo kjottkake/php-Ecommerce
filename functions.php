@@ -17,7 +17,7 @@ function displayNavBar(){
             echo "<a href='shoppingCart.php'>Shopping Cart ($totalItems)</a>  ";
         }
         echo "<a href='adminPage.php'>Admin Page</a>  ";
-        echo "<a href='login.php'>Login</a>  ";
+        echo "<a href='login.php'>Create User</a>  ";
         // echo "<a href='productPage.php'>Item</a>  ";
         // You can add more pages here
         // echo "<a href='/phpMyAdmin/index.php'>phpMyAdmin</a> ";
@@ -146,5 +146,14 @@ echo "<table>";
 echo "</table>";
     
 }
+
+
+function fix_string($str){
+    // Convert special chars. to htmlentities 
+     $str = htmlentities($str);
+     return $str;
+  }
+  
+
 
 ?>

@@ -1,7 +1,6 @@
 <?php
 require_once "class_Database.php";
 
-
 class User extends Database {
     protected $username;
     protected $password;
@@ -38,9 +37,15 @@ class User extends Database {
             echo "yes, information received"."<br>";
             
             
+
             $username = $_POST['username'];
             $password = $_POST['password'];
             $email = $_POST['email'];
+
+            //basic security measures
+            $username = User::fixString($username);
+            $password = User::fixString($password);
+            $email = User::fixString($email);
              // basic form data validation
              if($username && $password && $email){
     
@@ -103,6 +108,13 @@ class User extends Database {
 
     function genAdmin(){
         User::createAdmin();
+    }
+
+    //basic security meastures
+    function fixString($str){
+        // Convert special chars. to htmlentities 
+        $str = htmlentities($str);
+        return $str;
     }
 }
 
