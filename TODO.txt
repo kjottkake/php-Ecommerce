@@ -74,13 +74,13 @@ Development
         []Methods
             [x]addOrder()
             []deleteOrder()
-    []Product Class
-        []Methods
+    [x]Product Class
+        [x]Methods
             [x]deleteProduct()
         
     []User Class
         []Methods
-            []createAdmin()
+            [x]createAdmin()
             [x]addUser()
             [x]getUser()
             []checkIfLoggedIn()
