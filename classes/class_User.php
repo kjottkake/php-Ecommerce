@@ -25,8 +25,6 @@ class User extends Database {
         $result = mysqli_query($connection, $query);
             
         $this->$hasAdmin = true; 
-
-        print_r($this->$hasAdmin);
         }
         
     }
@@ -48,13 +46,7 @@ class User extends Database {
             $email = User::fixString($email);
              // basic form data validation
              if($username && $password && $email){
-    
-                // echo $username."<br>";
-                // echo $password."<br>";
-                // echo $email."<br>";
 
-                // connect to localhost, default username = root ; default password = root
-                // 'loginapp' in this case is our database. 
                 $connection = Database::connect();
 
                 if($connection) {
@@ -81,25 +73,6 @@ class User extends Database {
                 }
         }
 
-    }
-
-    protected function loggedIn(){
-
-    }
-
-    function getUser(){
-        $og = 1;
-        $connection = Database::connect();
-        //get the name of the user who's logged in.
-
-        $query = "SELECT * FROM users WHERE customer_id = $og";
-
-        $result = mysqli_query($connection, $query);
-        // print_r($result['username']);
-        $row = mysqli_fetch_assoc($result);
-        $username = $row['username'];
-
-        return $username;
     }
 
     function createUser(){

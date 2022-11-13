@@ -23,9 +23,7 @@ displayNavBar();
 </head>
 <body>
     <?php
-    $user = new User();
-    $userName = $user->getUser();
-    echo "<h1>Hello $userName, welcome back to Jixpress!</h1>"; 
+    echo "<h1>Hello, welcome back to Jixpress!</h1>"; 
     // Have a table to display current products
     $tableName = "products";    //sets variable for table to access
     $object = new Product();    //creates new Product Object

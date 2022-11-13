@@ -7,9 +7,6 @@ class Order extends Database {
     protected $quantity;
 
     protected function addOrder($customer_id, $id, $quantity) {
-        //get customer_id
-        // $customer_id = Order::getUser();
-        //get product_id
         $product_id = $id;
         //get the time
         $time = Order::getTime();
@@ -41,11 +38,6 @@ class Order extends Database {
             echo "Entry Added!<br>";
         }
         Database::disconnect($connection);
-    }
-
-    protected function getUser(){
-        $user_id = 1;
-        return $user_id;
     }
 
     protected function getTime(){
@@ -103,15 +95,6 @@ class Order extends Database {
     
                 file_put_contents("./data/shoppingCart.json", $json);
             }
-            // $new_data=array(
-            //     "product_id" => $id,
-            //     "quantity" => $quantity
-            // );
-
-            // $array_data[]=$new_data;
-            // $json = json_encode($array_data);
-
-            // file_put_contents("./data/shoppingCart.json", $json);
         } else { //if the file does not exist, display error message, this will eventually be replaced by creating a json file
             echo "json file does not exist";
             $new_data=array(
@@ -123,14 +106,12 @@ class Order extends Database {
             $json = json_encode($array_data);
             file_put_contents("./data/shoppingCart.json", $json);
         }
-        // header("Refresh:0");
     }
 
     function setCookie(){
         $cookie_name = "cart";
         $cookie_value = 1;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
-        // header("Refresh:0");
     }
 
 }

@@ -30,12 +30,57 @@ connect() - This function helps to establish a connection to the mysql database.
 
 disconnect() - Disconnects the function and takes in the argument of connection. 
 
+readFromTable($tableName) - Takes in the arguement tableName, establishes a connection and puts the resulting rows of data into an array. 
+
+deleteRowInDB($table, $column) - This function deletes rows of data in the database. This function has not been used in the project.
+
+showListOfOrders() - This function establishes a connection and joins the data from two tables to create a new table of data. This returns the results in an array. 
+
+
 
 ### Order
+addOrder($customer_id, $id, $quantity) - This function takes in the customer id, id, and quantity as arguements. Establishes a connection, and inserts the new order which has been created into the database.
+
+getTime() - This gets the time in milliseconds 
+
+getQuantity() - This function gets the quantity of item the user has submitted. 
+
+assembleOrder($customer_id, $id, $quantity) - This function takes in the arguments customer id, id, and quantity and calls on the previously protected function addOrder of the Order class. 
+
+generateJSON($id) - This function does a variety of things. Mainly it checks to see if a JSON file has been created, if it has not been created, it will create a JSON file with the appropriate data. If a JSON file is there from before, it will then check for duplicate entries of the same data, and update the quantity of the items in the shopping cart. 
+
+setCookie() - This sets a cookie, and sets it to expire in 7 days
 
 ### Product
+addProductToDB() - This function establishes a connection, and adds the data the user submitted from the form into the database. 
+
+deleteProduct() - This method calls on the deleteRowInDB method of the superclass Database and deletes a row of data from the database.
+
+displayProducts($resArray) - This method takes the argument resArray and formats the data into a table and displays it on the page. 
+
+getIndividualItem($item_id) - This method establishes a connection and uses the arguement item_id to get the data from just 1 row of the products table. The row of data returned is the individual product with the id item_id.
+
+readTable($tableName) - This method takes in the argument tableName and calls on the protected method of readFromTable and returns the table data.
+
+displayOrders() - Calls upon the showListOfOrders from the Database superclass and returns the table data. 
+
+getNewItem() - Calls upon the addProductsToDB protected method 
+
+getValue($id, $name) - This method takes in the arugments id and name and returns the specific value of a particular field from a table based on the id of that product. 
+
+
 
 ### User
+createAdmin() - This method is called on when the user clicks on the login/create account page for the first time. It establishes connection and creates an entry of the user with the username admin, with the password of '0admin0' and email of 'admin@ecommerce.com' along with the id of 420 and a role of 0 signifying it is an admin account
+
+
+addUser() - This method adds a user account to the database from the data submitted via the posting of the form data. 
+
+createUser() - This calls on the protected method addUser method
+
+genAdmin() - this calls on the protected method createAdmin
+
+fixString($str) - This takes in the argument str and removes any html entities. This serves as a basic security measurments against SQL injection. 
 
 ## Testing Instructions
 First put the ecommerce folder into your htdocs folder or equivalent for MAMP.
@@ -90,7 +135,11 @@ With the individual items you can test out adding them to the shopping cart. A J
 
 The shopping cart page will display the number of items in the cart, the sub total, and the total. 
 
-The shopping cart link in the navbar will also displaly the number of items in the cart.
+The shopping cart link in the navbar will also display the number of items in the cart.
+
+Once the user clicks 'submit order' a order will be created, the shoppping cart will clear the JSON file and clear the results in the cart page.
+
+
 
 
 

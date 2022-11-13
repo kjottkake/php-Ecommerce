@@ -80,11 +80,6 @@ class Database{
         Database::disconnect($connection);
     }
 
-    // sanitize input
-    protected function cleanVar($var, $connection){
-        
-    }
-
     function showListOfOrders(){
         $connection = Database::connect();
         $query = "SELECT orders.order_id, orders.product_id, orders.quantity, customers.firstname, customers.country from orders INNER JOIN customers ON orders.customer_id=customers.customer_id";

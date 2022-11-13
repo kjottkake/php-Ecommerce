@@ -173,11 +173,6 @@ class Product extends Database{
 
         return $value;
     }
-    //constructor for display
-    // public function __construct($arr){
-    //     $this->displayProducts($arr);
-    // }
-    
 }
 
 
