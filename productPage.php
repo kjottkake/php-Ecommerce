@@ -4,11 +4,25 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include "functions.php";
-include "classes/class_User.php";
+// include "classes/class_User.php";
 include "classes/class_Product.php";
 include "classes/class_Order.php";
 displayNavBar();
 
+//  //create new order
+//  $obj = new Order;
+//  // $obj->assembleOrder($product_id);
+//  //product_id and quantity should be added to a JSON file named shoppingCart.json
+//  $obj->generateJSON($product_id);
+//  //Also set a cookie called "cart" to 1
+//  //Set cookie to expire in 1 week
+//  $obj->setcookie();
+//  //refreshes page so that shopping cart in navbar can reflect correct amount of items
+// //  header("Refresh:0");
+if(isset($_POST['submit']))
+        {
+        echo "<meta http-equiv='refresh' content='0'>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +39,8 @@ displayNavBar();
     
     <?php 
     //check to see who's logged in
-    $user = new User;
-    $loggedInUser = $user->getUser();
+    // $user = new User;
+    // $loggedInUser = $user->getUser();
     $product_id = $_GET['id'];
 
     echo "<h1>product id $product_id </h1>";
@@ -50,14 +64,14 @@ displayNavBar();
     <?php
     //create new order
     $obj = new Order;
-    $obj->assembleOrder($product_id);
+    // $obj->assembleOrder($product_id);
     //product_id and quantity should be added to a JSON file named shoppingCart.json
     $obj->generateJSON($product_id);
     //Also set a cookie called "cart" to 1
     //Set cookie to expire in 1 week
     $obj->setcookie();
     //refreshes page so that shopping cart in navbar can reflect correct amount of items
-    header("Refresh:0");
+    // header("Refresh:0");
     ?>
     
     

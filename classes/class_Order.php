@@ -54,13 +54,13 @@ class Order extends Database {
         return $date;
     }
 
-    // protected function getQuantity(){
-    //     if(isset($_POST['submit'])) {
-    //             echo "yes, information received"."<br>";
-    //             $quantity = $_POST['quantity'];
-    //             return $quantity;
-    //     }
-    // }
+    protected function getQuantity(){
+        if(isset($_POST['submit'])) {
+                echo "yes, information received"."<br>";
+                $quantity = $_POST['quantity'];
+                return $quantity;
+        }
+    }
 
     function assembleOrder($customer_id, $id, $quantity){
         Order::addOrder($customer_id, $id, $quantity);
@@ -123,13 +123,14 @@ class Order extends Database {
             $json = json_encode($array_data);
             file_put_contents("./data/shoppingCart.json", $json);
         }
-
+        // header("Refresh:0");
     }
 
     function setCookie(){
         $cookie_name = "cart";
         $cookie_value = 1;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
+        // header("Refresh:0");
     }
 
 }

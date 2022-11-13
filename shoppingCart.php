@@ -8,6 +8,18 @@ include "classes/class_Product.php";
 include "classes/class_Order.php";
 displayNavBar();
 
+
+// $obj = new Order;
+
+//     $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
+//     $jsonObj = json_decode($jsonDataFromFile, true);
+
+//     foreach($jsonObj as $key => $value){
+//     $product_id = $value["product_id"];
+//     $quantity = $value["quantity"];
+//     $obj->assembleOrder(1, $product_id, $quantity);
+//     }
+
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +110,7 @@ displayNavBar();
                     
                 </div>
                 
-                <input class="btn btn-primary" type="submit" name="submit" value="Submit" >
+                <input class="btn btn-primary" type="submit" name="submit" value="Submit Order" >
                 
     </form>
 
