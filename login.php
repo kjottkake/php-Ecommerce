@@ -11,8 +11,8 @@ displayNavBar();
 
 
 $user = new User;
-$user->createUser();
-
+// $user->createUser();
+$user->genAdmin();
 ?>
 
 <!DOCTYPE html>

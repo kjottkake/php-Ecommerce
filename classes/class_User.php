@@ -5,11 +5,30 @@ require_once "class_Database.php";
 class User extends Database {
     protected $username;
     protected $password;
-    protected $isAdmin;
+    protected $hasAdmin;
     protected $isLoggedIn;
 
     //function for creating admin account
     protected function createAdmin(){
+        $hasAdmin = false;
+        if ($hasAdmin == false){
+        $connection = Database::connect();
+
+        if($connection) {
+            echo "We are connected";
+        } else {
+            die ("Database connection failed!");
+        } 
+        $query = "INSERT INTO users(username,password,email,customer_id,role)";
+        $query .= "VALUES ('admin', '0admin0', 'admin@ecommerce.com', 420,  0)";
+        //if there isn't an admin account add admin account
+        
+        $result = mysqli_query($connection, $query);
+            
+        $this->$hasAdmin = true; 
+
+        print_r($this->$hasAdmin);
+        }
         
     }
 
@@ -25,36 +44,36 @@ class User extends Database {
              // basic form data validation
              if($username && $password && $email){
     
-            // echo $username."<br>";
-            // echo $password."<br>";
-            // echo $email."<br>";
+                // echo $username."<br>";
+                // echo $password."<br>";
+                // echo $email."<br>";
 
-            // connect to localhost, default username = root ; default password = root
-            // 'loginapp' in this case is our database. 
-            $connection = Database::connect();
+                // connect to localhost, default username = root ; default password = root
+                // 'loginapp' in this case is our database. 
+                $connection = Database::connect();
 
-            if($connection) {
-                echo "We are connected";
-            } else {
-                die ("Database connection failed!");
-            } 
-            
-            //query the database
-            $query = "INSERT INTO users(username,password,email)";
-            $query .= "VALUES ('$username', '$password', '$email')";
-            
-            $result = mysqli_query($connection, $query);
-            
-            // printing error message in case of query failure
-            if(!$result){
-                die('Query failed!' . mysqli_error());
-            }
-
-                  
-            } else{
+                if($connection) {
+                    echo "We are connected";
+                } else {
+                    die ("Database connection failed!");
+                } 
                 
-                echo "<br>"."The username and password fields cannot be blank!";
-            }
+                //query the database
+                $query = "INSERT INTO users(username,password,email)";
+                $query .= "VALUES ('$username', '$password', '$email')";
+                
+                $result = mysqli_query($connection, $query);
+                
+                // printing error message in case of query failure
+                if(!$result){
+                    die('Query failed!' . mysqli_error());
+                }
+
+                    
+                } else{
+                    
+                    echo "<br>"."The username and password fields cannot be blank!";
+                }
         }
 
     }
@@ -80,6 +99,10 @@ class User extends Database {
 
     function createUser(){
         User::addUser();
+    }
+
+    function genAdmin(){
+        User::createAdmin();
     }
 }
 
