@@ -6,16 +6,14 @@ class Order extends Database {
     protected $time;
     protected $quantity;
 
-    protected function addOrder($id) {
+    protected function addOrder($customer_id, $id, $quantity) {
         //get customer_id
         // $customer_id = Order::getUser();
-        $customer_id = 1;
         //get product_id
         $product_id = $id;
         //get the time
         $time = Order::getTime();
         //get quantity
-        $quantity = Order::getQuantity();
         echo "<br>Quantity $quantity<br>";
         echo "<br>Customer_id: $customer_id<br>";
         echo "<br>product_id: $product_id<br>";
@@ -38,7 +36,7 @@ class Order extends Database {
 
         // printing error message in case of query failure
         if(!$result){
-            die('Query failed!' . mysqli_error($connection));
+            die('Query failed! Something fucked up in the order process' . mysqli_error($connection));
         }else {
             echo "Entry Added!<br>";
         }
@@ -56,16 +54,16 @@ class Order extends Database {
         return $date;
     }
 
-    protected function getQuantity(){
-        if(isset($_POST['submit'])) {
-                echo "yes, information received"."<br>";
-                $quantity = $_POST['quantity'];
-                return $quantity;
-        }
-    }
+    // protected function getQuantity(){
+    //     if(isset($_POST['submit'])) {
+    //             echo "yes, information received"."<br>";
+    //             $quantity = $_POST['quantity'];
+    //             return $quantity;
+    //     }
+    // }
 
-    function assembleOrder($id){
-        Order::addOrder($id);
+    function assembleOrder($customer_id, $id, $quantity){
+        Order::addOrder($customer_id, $id, $quantity);
     }
 
     //function for generating JSON file

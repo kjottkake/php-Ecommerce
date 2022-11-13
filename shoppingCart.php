@@ -4,9 +4,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include "functions.php";
-// include "classes/class_Order.php";
 include "classes/class_Product.php";
-
+include "classes/class_Order.php";
 displayNavBar();
 
 ?>
@@ -73,9 +72,50 @@ displayNavBar();
     // After the order has been added to the database, cookie for the shopping cart should be destroyed. 
       
     ?>
+    <form action="shoppingCart.php">
+    <div class="form-group">
+                  <label for="firstname">first name</label> 
+                  <input type="text" name="firstname" class="form-control">
+                  
+                </div>
+
+                <div class="form-group">
+                  <label for="lastname">last name</label> 
+                  <input type="text" name="lastname" class="form-control">
+                  
+                </div>  
+              
+              
+                <div class="form-group">
+                    <label for="address">address</label>
+                    <input type="text" name="address" class="form-control">
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="country">country</label>
+                    <input type="text" name="country" class="form-control">
+                    
+                </div>
+                
+                <input class="btn btn-primary" type="submit" name="submit" value="Submit" >
+                
+    </form>
+
     
     
-    
+    <?php 
+    $obj = new Order;
+
+    $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
+    $jsonObj = json_decode($jsonDataFromFile, true);
+
+    foreach($jsonObj as $key => $value){
+    $product_id = $value["product_id"];
+    $quantity = $value["quantity"];
+    $obj->assembleOrder(1, $product_id, $quantity);
+    }
+    ?>
     
 </body>
 </html>
