@@ -28,7 +28,8 @@ Development
         [x]function to remove item
         [x]method to remove item
     []Table to list number of orders in process
-        []INSERT JOIN FUNCTIONS 
+        [x]INSERT JOIN FUNCTIONS 
+        []Display current orders
         []Fields to list country
         []Fields to list date 
         []Different sorting options

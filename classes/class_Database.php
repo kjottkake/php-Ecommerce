@@ -89,7 +89,7 @@ class Database{
 
     function showListOfOrders(){
         $connection = Database::connect();
-        $query = "SELECT orders.product_id, orders.quantity, customers.firstname, customers.country from orders INNER JOIN customers ON orders.customer_id=customers.customer_id";
+        $query = "SELECT orders.order_id, orders.product_id, orders.quantity, customers.firstname, customers.country from orders INNER JOIN customers ON orders.customer_id=customers.customer_id";
         $result = mysqli_query($connection, $query);
 
         $result = mysqli_query($connection, $query);
