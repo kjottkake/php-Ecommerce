@@ -20,6 +20,24 @@ displayNavBar();
 //     $obj->assembleOrder(1, $product_id, $quantity);
 //     }
 
+if (isset($_POST['submit'])) {
+    $obj = new Order;
+
+    $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
+    $jsonObj = json_decode($jsonDataFromFile, true);
+
+    foreach($jsonObj as $key => $value){
+    $product_id = $value["product_id"];
+    $quantity = $value["quantity"];
+    $obj->assembleOrder(1, $product_id, $quantity);
+    }
+    //deletes json data
+     file_put_contents("./data/shoppingCart.json", json_encode([]));
+    // return;
+    echo "Thanks for placing yoru order!";
+    echo "<meta http-equiv='refresh' content='0'>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +102,7 @@ displayNavBar();
     // After the order has been added to the database, cookie for the shopping cart should be destroyed. 
       
     ?>
-    <form action="shoppingCart.php">
+    <form action="shoppingCart.php" method="post">
     <div class="form-group">
                   <label for="firstname">first name</label> 
                   <input type="text" name="firstname" class="form-control">
@@ -117,16 +135,20 @@ displayNavBar();
     
     
     <?php 
-    $obj = new Order;
+    // $obj = new Order;
 
-    $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
-    $jsonObj = json_decode($jsonDataFromFile, true);
+    // $jsonDataFromFile = file_get_contents("./data/shoppingCart.json");
+    // $jsonObj = json_decode($jsonDataFromFile, true);
 
-    foreach($jsonObj as $key => $value){
-    $product_id = $value["product_id"];
-    $quantity = $value["quantity"];
-    $obj->assembleOrder(1, $product_id, $quantity);
-    }
+    // foreach($jsonObj as $key => $value){
+    // $product_id = $value["product_id"];
+    // $quantity = $value["quantity"];
+    // $obj->assembleOrder(1, $product_id, $quantity);
+    // }
+
+    //need to delete cookies and json
+    // file_put_contents("./data/shoppingCart.json", json_encode([]));
+    // echo "Thanks for placing yoru order!"
     ?>
     
 </body>

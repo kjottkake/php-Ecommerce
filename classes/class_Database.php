@@ -92,6 +92,8 @@ class Database{
     // public function __construct($table){
     //     $this->readFromTable($table);
     // }
+
+    
     
 }
 
