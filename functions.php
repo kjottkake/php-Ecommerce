@@ -147,13 +147,4 @@ echo "</table>";
     
 }
 
-
-function fix_string($str){
-    // Convert special chars. to htmlentities 
-     $str = htmlentities($str);
-     return $str;
-  }
-  
-
-
 ?>

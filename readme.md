@@ -1,6 +1,32 @@
 # What is this project?
 This is an online storefront and backend database created with PHP. 
 
+# Project Features In a Nutshell
+Main Page where users get an overview of products.
+
+Admin Page where users gets an overview of products, form to create new products, basic validation of form data (but no feedback), the option to delete items from database, and lastly, a table which displays current orders
+
+Product Page where specific information about a product is displayed. The user can select quantity and add the item to the cart. 
+
+Shopping Cart Page is where details about the contents of the shopping cart is displayed. 
+
+Login Page creates 1 admin account and allows for basic creation of user accounts. A more thorough implementation was not created such as checking if an account exists. A basic mysql validation was also implemented. 
+
+## Other project features
+PHP constructions such as expressions and loops.
+
+Functions, arrays and objects.
+
+File management and JSON datastructure.
+
+Forms handling.
+
+HTTP GET and POST 
+
+mySQL and PHP for database handling.
+
+Sessions, Cookies, and basic security measures. 
+
 ## Prerequists for running this project
 MAMP installed on your local machine with Apache Server and MySQL Server
 
@@ -16,6 +42,7 @@ shoppingCart.php - on this page will be displayed an overview of the items in th
 
 adminPage.php - this page displays the items of the product table of the ecommerce database. The user can also show a table displaying current orders. The user can also add new items to the database. NOTE: the image field takes in a image url instead of file upload. (I liked this method better). Once an item is submitted, it will be saved in the product table of the database. The final functionality of the admin page is to delete items. The user can select through a dropdown menu and delete the item from the database.  
 
+functions.php - This is many of the helper functions used throughout the project. 
 
 ### classes folder
 This folder contains the various classes for this project.
