@@ -1,7 +1,7 @@
 <?php
 // Turn on error reporting:
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 include "functions.php";
 include "classes/class_Database.php";
@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Hey cool dude, you're at the admin pageasdfadf</h1>
+    <h1>Admin Page</h1>
     <?php
     
     // Have a table to display current products
